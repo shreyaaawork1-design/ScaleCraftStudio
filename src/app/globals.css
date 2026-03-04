@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon: #d9ff00; 
+  --color-carbon: #050505;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Tagline ko force bold karne ke liye */
+.hero-tagline {
+  -webkit-text-stroke: 1px rgba(217, 255, 0, 0.2); /* Halka sa stroke width badhane ke liye */
+  font-weight: 900 !important;
+}
+
+body {
+  font-family: var(--font-jakarta), sans-serif !important;
+}
+
+* {
+  cursor: none !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#050505] text-white antialiased overflow-x-hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* The Blueprint Grid: Relevant to ScaleCraft Identity */
+.blueprint-draft {
+  background-image: 
+    linear-gradient(rgba(217, 255, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 255, 0, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glass Header Expansion */
+.glass-vault {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-vault:hover {
+  @apply py-10 px-16; 
+  background: rgba(255, 255, 255, 0.04);
+  width: 96%;
+}
+
+.noise-overlay {
+  @apply fixed inset-0 z-[9999] pointer-events-none opacity-[0.02];
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
