@@ -17,14 +17,23 @@ const navData = [
 ];
 
 // --- SHARD CURSOR (Smart Inversion Fix) ---
+// --- SHARD CURSOR (Performance Boosted for Work Page) ---
 const ShardCursor = () => {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
-  const smoothX = useSpring(mouseX, { damping: 40, stiffness: 400, mass: 0.5 });
-  const smoothY = useSpring(mouseY, { damping: 40, stiffness: 400, mass: 0.5 });
+  
+  // Stiffness ko 400 se 800 aur damping ko 40 se 30 kiya hai fast response ke liye
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 800, mass: 0.5 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 800, mass: 0.5 });
   
   useEffect(() => {
-    const handleMouseMove = (e) => { mouseX.set(e.clientX); mouseY.set(e.clientY); };
+    const handleMouseMove = (e) => { 
+      // requestAnimationFrame ka use taaki browser movement ko smooth handle kare
+      window.requestAnimationFrame(() => {
+        mouseX.set(e.clientX); 
+        mouseY.set(e.clientY); 
+      });
+    };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [mouseX, mouseY]);
