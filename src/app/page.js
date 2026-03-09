@@ -5,6 +5,9 @@ import { motion, AnimatePresence, useScroll, useSpring, useTransform, useMotionV
 import { Menu, ChevronDown, ArrowRight, X, Ruler, PenTool, Layout, Activity, Target, Zap, Globe, TrendingUp, Mail, Phone, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight, Search, PencilRuler, Rocket, PieChart, Layers, Users, BarChart3, Shield, Cpu,MousePointer2 } from 'lucide-react';
 
 import Link from 'next/link'; // Sabse upar ye line honi chahiye
+import dynamic from 'next/dynamic';
+
+// Navbar aur ShardCursor ko dynamic banayein taaki baaki page pehle load ho jaye
 
 // --- ALLIANCE PARTNERS (Exact Match with your Public Folder) ---
 const partners = [
@@ -34,6 +37,7 @@ const HeroSlideshow = ({ children }) => {
   const [index, setIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const ref = useRef(null);
+  priority="true"
 
   const images = [
     "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
@@ -190,14 +194,16 @@ const CalibratedWord = ({ children, type }) => {
 const ShardCursor = () => {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
-
-  const smoothX = useSpring(mouseX, { damping: 25, stiffness: 800, mass: 0.1 });
-  const smoothY = useSpring(mouseY, { damping: 25, stiffness: 800, mass: 0.1 });
-
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 800, mass: 0.5 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 800, mass: 0.5 });
+  const ShardCursor = dynamic(() => import('./components/ShardCursor'), { ssr: false });
+  
   useEffect(() => {
     const handleMouseMove = (e) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      window.requestAnimationFrame(() => {
+        mouseX.set(e.clientX);
+        mouseY.set(e.clientY);
+      });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
@@ -205,27 +211,21 @@ const ShardCursor = () => {
 
   return (
     <motion.div 
-      className="fixed top-0 left-0 z-[10000] pointer-events-none hidden md:block"
-      style={{ 
-        x: smoothX, 
-        y: smoothY, 
-        mixBlendMode: 'difference',
-        filter: 'drop-shadow(0 0 12px rgba(217,255,0,0.8))' 
-      }}
+      className="fixed top-0 left-0 z-[10000] pointer-events-none hidden md:block" 
+      style={{ x: smoothX, y: smoothY, mixBlendMode: 'difference' }}
     >
-      <MousePointer2 size={18} fill="#d9ff00" className="text-[#d9ff00]" />
+      <MousePointer2 size={22} fill="#d9ff00" className="text-[#d9ff00] drop-shadow-[0_0_12px_rgba(217,255,0,0.9)]" />
     </motion.div>
   );
 };
 
 const StrategyCard = ({ plan, index }) => (
   <motion.div 
-    initial={{ opacity: 0, y: 50 }} 
-    whileInView={{ opacity: 1, y: 0 }} 
-    viewport={{ once: true }}
-    className="sticky top-24 md:top-40 bg-zinc-950 border border-white/5 p-8 md:p-12 rounded-[30px] md:rounded-[50px] shadow-[0_-30px_60px_rgba(0,0,0,0.9)] h-auto md:h-[380px] mb-10 md:mb-20 flex flex-col justify-between group overflow-hidden"
-    style={{ zIndex: index + 10, marginTop: index === 0 ? 0 : '-80px' }}
-  >
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }} // Isse refresh pe load kam padega
+  transition={{ duration: 0.8 }}
+>
     <div className="absolute top-0 right-0 w-64 h-64 bg-[#d9ff00]/5 blur-[100px] pointer-events-none" />
     
     <div>
@@ -637,12 +637,7 @@ export default function ScaleCraftRefined() {
                 <Twitter size={20} />
               </a>
               {/* Gmail / Enquiry */}
-              <a 
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110"
->
+             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry" target="_blank" rel="noopener noreferrer">
   <Mail size={20} />
 </a>
             </div>

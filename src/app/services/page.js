@@ -22,28 +22,24 @@ const ShardCursor = () => {
   const mouseY = useMotionValue(-100);
   const smoothX = useSpring(mouseX, { damping: 30, stiffness: 800, mass: 0.5 });
   const smoothY = useSpring(mouseY, { damping: 30, stiffness: 800, mass: 0.5 });
-
+  
   useEffect(() => {
-    const move = (e) => {
+    const handleMouseMove = (e) => {
       window.requestAnimationFrame(() => {
         mouseX.set(e.clientX);
         mouseY.set(e.clientY);
       });
     };
-    window.addEventListener('mousemove', move);
-    return () => window.removeEventListener('mousemove', move);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [mouseX, mouseY]);
 
   return (
     <motion.div 
       className="fixed top-0 left-0 z-[10000] pointer-events-none hidden md:block" 
-      style={{ 
-        x: smoothX, 
-        y: smoothY, 
-        mixBlendMode: 'difference' 
-      }}
+      style={{ x: smoothX, y: smoothY, mixBlendMode: 'difference' }}
     >
-      <MousePointer2 size={22} fill="#d9ff00" className="text-[#d9ff00] drop-shadow-[0_0_12px_rgba(217,255,0,0.8)]" />
+      <MousePointer2 size={22} fill="#d9ff00" className="text-[#d9ff00] drop-shadow-[0_0_12px_rgba(217,255,0,0.9)]" />
     </motion.div>
   );
 };
@@ -57,12 +53,12 @@ export default function ServicesPage() {
 
       {/* --- HEADER (Synced with Home) --- */}
       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] z-[1000] px-3 md:px-10 py-2 md:py-4 flex flex-col rounded-[20px] md:rounded-[32px] bg-white/[0.05] backdrop-blur-[40px] border border-white/20 shadow-2xl transition-all duration-700">
-        <div className="flex justify-between items-center w-full">
-          <Link href="/" className="shrink-0">
-            <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white transition-all hover:drop-shadow-[0_0_15px_rgba(217,255,0,0.9)]">
-              SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
-            </div>
-          </Link>
+  <div className="flex justify-between items-center w-full">
+    <Link href="/" className="shrink-0">
+      <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white transition-all hover:drop-shadow-[0_0_15px_rgba(217,255,0,0.9)]">
+        SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
+      </div>
+    </Link>
 
           <div className="hidden lg:flex gap-4">
             {navData.map((item, i) => (
@@ -304,8 +300,9 @@ export default function ServicesPage() {
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Twitter size={20} /></a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Mail size={20} /></a>
-            </div>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry" target="_blank" rel="noopener noreferrer">
+  <Mail size={20} />
+</a>            </div>
           </div>
           <div className="grid grid-cols-2 gap-10">
             <div className="space-y-6">
