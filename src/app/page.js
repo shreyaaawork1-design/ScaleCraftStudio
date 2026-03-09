@@ -17,20 +17,15 @@ const navData = [
   { 
     label: 'Our Services', 
     link: '/services', 
-    desc: 'How we help you grow', 
-    sub: ['Ads that bring Sales', 'Making Your Brand Famous', 'Viral Reels & Content', 'Getting New Leads'] 
   },
   { 
     label: 'How we work', 
     link: '/work', 
-    desc: 'Our simple 5-step way', 
-    sub: ['The Strategy', 'Tools We Use', 'Our Process'] 
+  
   },
   { 
     label: 'About Us', 
     link: '/about', 
-    desc: 'Brands we have grown', 
-    sub: ['Who are we', 'What do we do', 'Our Leadership'] 
   }
 ];
 
@@ -322,7 +317,7 @@ export default function ScaleCraftRefined() {
               <span className="text-zinc-400 group-hover:text-[#d9ff00] font-black uppercase tracking-widest text-[10px] transition-colors">
                 {item.label}
               </span>
-              {/* Optional Description (Optional, can keep it empty as per your instruction) */}
+            
               <span className="text-zinc-600 text-[8px] uppercase tracking-tighter mt-1 italic">
                 {item.desc}
               </span>
