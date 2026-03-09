@@ -265,7 +265,7 @@ export default function ServicesPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {[
-            { name: "Essential", price: "₹9,999", sub: "Startup Friendly", features: ["Social Media Management", "Content Pillar Strategy", "8 High-End Designs/mo", "Monthly Growth Audit"] },
+            { name: "Essential", price: "₹11,999", sub: "Startup Friendly", features: ["Social Media Management", "Content Pillar Strategy", "8 High-End Designs/mo", "Monthly Growth Audit"] },
             { name: "Performance", price: "₹19,999", sub: "Growth Catalyst", features: ["Full SMM Handling", "Performance Ads Management", "High-Retention Reels", "WhatsApp Funnels", "Pixel Integration"] },
             { name: "Dominance", price: "₹29,999", sub: "Market Authority", features: ["Full Ecosystem", "Unlimited Creative Lab", "Premium Content Production", "CRM & Lead Automation", "24/7 Consulting"] }
           ].map((plan, i) => (

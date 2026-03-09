@@ -101,7 +101,7 @@ const HeroSlideshow = ({ children }) => {
 const pipelineSteps = [
   { 
     title: "MARKET DISCOVERY", 
-    desc: "We dismantle industry architecture to find hidden growth gaps Using 50+ data points from Gurugram’s landscape, we audit the market to define a predictable path for your brand. We ensure every rupee is aimed at a mathematically proven audience for maximum scaling potential.", 
+    desc: "We dismantle industry architecture to find hidden growth gaps Using 50+ data points from the Indian Market, we audit the market to define a predictable path for your brand. We ensure every rupee is aimed at a mathematically proven audience for maximum scaling potential.", 
     icon: <Search size={22} />,
     technical: "PROTOCOL: DATA_MINING_v4.2"
   },
