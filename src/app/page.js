@@ -596,13 +596,18 @@ export default function ScaleCraftRefined() {
           </div>
           
           <div className="flex-shrink-0 relative group self-center md:self-auto">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" target="_blank" rel="noopener noreferrer" className="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center bg-zinc-900 shadow-2xl overflow-hidden hover:border-[#d9ff00]/30 transition-all duration-700">
-              <div className="absolute inset-0 bg-[#d9ff00] scale-0 group-hover:scale-100 transition-transform duration-700 rounded-full" />
-              <div className="flex flex-col items-center gap-2 z-10 transition-colors duration-700 group-hover:text-black">
-                <span className="text-zinc-500 font-black uppercase text-[8px] md:text-[10px] tracking-[0.3em] group-hover:text-black">A formal Enquiry?</span>
-                <Mail size={32} className="text-[#d9ff00] group-hover:text-black" />
-              </div>
-            </a>
+            <a 
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center bg-zinc-900 shadow-2xl overflow-hidden hover:border-[#d9ff00]/30 transition-all duration-700"
+>
+  {/* Yahan aapka button text ya icon rahega */}
+  <div className="flex flex-col items-center">
+    <Mail size={32} className="text-[#d9ff00] mb-2 group-hover:scale-110 transition-transform" />
+    <span className="text-white font-black uppercase text-[10px] tracking-widest">A formal enquiry?</span>
+  </div>
+</a>
           </div>
         </div>
       </section>
@@ -618,7 +623,7 @@ export default function ScaleCraftRefined() {
               SCALE<span className="text-[#d9ff00]">CRAFT.</span>
             </div>
             <p className="text-zinc-500 font-medium italic max-w-xs text-sm leading-relaxed">
-              Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.
+              Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.
             </p>
             
             {/* SOCIAL ICONS SECTION */}
@@ -633,12 +638,13 @@ export default function ScaleCraftRefined() {
               </a>
               {/* Gmail / Enquiry */}
               <a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
-                target="_blank" 
-                className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110"
-              >
-                <Mail size={20} />
-              </a>
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110"
+>
+  <Mail size={20} />
+</a>
             </div>
           </div>
 
@@ -672,12 +678,12 @@ export default function ScaleCraftRefined() {
               <div className="space-y-4 text-zinc-500 text-[9px] font-bold uppercase tracking-widest leading-loose">
                 <p className="flex gap-3 items-center">
                   <MapPin size={14} className="text-[#d9ff00] shrink-0" /> 
-                  Gurgaon, HR
+                  Gurugram, HR
                 </p>
                 <p className="flex gap-3 truncate items-center">
                   {/* Mail Icon for Email Address */}
                   <Mail size={14} className="text-[#d9ff00] shrink-0" /> 
-                  scalecraftstudio7
+                 enquiry@scalecraftstudio.in
                 </p>
               </div>
             </div>

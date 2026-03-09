@@ -247,7 +247,7 @@ export default function ServicesPage() {
                <h2 className="text-3xl md:text-5xl font-black uppercase italic leading-none">Search <br/> <span className="text-[#d9ff00]">Authority (SEO).</span></h2>
             </div>
             <div className="space-y-6 md:space-y-8 text-zinc-400 text-sm md:text-lg italic leading-relaxed">
-              <p>SEO builds a permanent asset. We make sure your brand is the first thing people see on Google in Gurgaon and Noida.</p>
+              <p>SEO builds a permanent asset. We make sure your brand is the first thing people see on Google in Gurugram</p>
             </div>
           </div>
           <div className="bg-[#d9ff00] rounded-[40px] md:rounded-[60px] p-8 md:p-20 text-black flex flex-col justify-between h-[300px] md:h-[400px] w-full">
@@ -300,7 +300,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
           <div className="space-y-8 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon.</p>
+            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram.</p>
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Twitter size={20} /></a>
@@ -319,8 +319,8 @@ export default function ServicesPage() {
             <div className="space-y-6">
               <p className="text-white font-black text-[9px] md:text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
               <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
-                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurgaon, HR</p>
-                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> scalecraftstudio7</p>
+                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurugram, HR</p>
+                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function ServicesPage() {
           </div>
         </div>
         <div className="mt-20 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[0.5em] md:tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurgaon</p>
+          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[0.5em] md:tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurugram</p>
         </div>
       </footer>
     </main>

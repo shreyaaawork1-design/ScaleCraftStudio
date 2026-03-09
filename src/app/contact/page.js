@@ -166,7 +166,7 @@ export default function ContactPage() {
               </h1>
             </div>
             <div className="space-y-4 border-l-2 border-[#d9ff00]/20 pl-6 md:pl-8">
-              <p className="text-zinc-500 font-bold uppercase text-[9px] md:text-[10px] tracking-widest italic">Based in Gurgaon, Haryana</p>
+              <p className="text-zinc-500 font-bold uppercase text-[9px] md:text-[10px] tracking-widest italic">Based in Gurugram, Haryana</p>
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in" target="_blank" className="text-[#d9ff00] text-xs md:text-sm font-black italic hover:underline flex items-center gap-2">
                 enquiry@scalecraftstudio.in<ArrowUpRight size={14} />
               </a>
@@ -220,7 +220,7 @@ export default function ContactPage() {
               SCALE<span className="text-[#d9ff00]">CRAFT.</span>
             </div>
             <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">
-              Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.
+              Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.
             </p>
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
@@ -241,8 +241,8 @@ export default function ContactPage() {
             <div className="space-y-6">
               <p className="text-white font-black text-[9px] md:text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2 italic">HQ</p>
               <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
-                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurgaon, HR</p>
-                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> scalecraftstudio7</p>
+                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurugram, HR</p>
+                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="mt-20 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurgaon</p>
+          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurugram</p>
         </div>
       </footer>
     </main>

@@ -198,7 +198,7 @@ export default function WorkPage() {
             ENGINEERED <br /> <span className="text-zinc-800">EXECUTION.</span>
           </h1>
           <p className="text-zinc-500 text-base md:text-xl font-medium leading-relaxed italic border-l-4 border-[#d9ff00]/20 pl-6 md:pl-10 max-w-4xl">
-            Success is not a product of luck; it is a result of clinical engineering. We dismantle the chaos of traditional marketing to install a <span className="text-[#d9ff00]">high-speed, data-driven revenue engine</span> tailored for the ambitious digital landscape of Gurgaon and beyond.
+            Success is not a product of luck; it is a result of clinical engineering. We dismantle the chaos of traditional marketing to install a <span className="text-[#d9ff00]">high-speed, data-driven revenue engine</span> tailored for the ambitious digital landscape of Gurugram and beyond.
           </p>
         </div>
       </section>
@@ -212,7 +212,7 @@ export default function WorkPage() {
                <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-tight">Growth <br/> <span className="text-[#d9ff00]">Strategies.</span></h2>
             </div>
             <div className="text-zinc-400 text-sm md:text-lg font-medium italic space-y-6 md:space-y-8 leading-relaxed">
-              <p>Our growth strategies are founded on the principle of <span className="text-[#d9ff00]">Psychological Performance Architecture</span>. We target human behavior, not just demographics. By mapping the digital footprint of your potential customer in Gurgaon and Greater Noida, we identify the exact "Conversion Gaps". </p>
+              <p>Our growth strategies are founded on the principle of <span className="text-[#d9ff00]">Psychological Performance Architecture</span>. We target human behavior, not just demographics. By mapping the digital footprint of your potential customer in Gurugram, we identify the exact "Conversion Gaps". </p>
               <p>We utilize <span className="text-[#d9ff00]">High-Intensity Data Modeling</span> to predict market shifts before they happen. This includes setting up technical funnel hierarchies that guide a cold prospect from curiosity to a confirmed transaction in record time.</p>
               <p>Whether it is scaling your <span className="text-[#d9ff00]">ROAS (Return on Ad Spend)</span> through advanced A/B testing or building a long-term asset through Search Authority, every move we make is backed by mathematical logic.</p>
             </div>
@@ -312,7 +312,7 @@ export default function WorkPage() {
             </h2>
             <div className="text-zinc-500 text-sm md:text-xl font-medium leading-relaxed italic space-y-8 md:space-y-12">
               <p>Our work culture is rooted in <span className="text-[#d9ff00]">Obsessive Understanding</span>. We don't believe in generic templates or one-size-fits-all marketing. Every brand is a living entity with a unique identity, and our job is to translate that identity into a market-leading position. At ScaleCraft Studio, we immerse ourselves in your vision, your challenges, and your history. </p>
-              <p>Only once we have fully decoded your <span className="text-[#d9ff00]">Brand DNA</span> do we execute our high-intensity market discovery protocols. We analyze consumer psychology in Gurgaon, Noida, and the global digital space to find the exact intersection where your value proposition meets high-intent demand.</p>
+              <p>Only once we have fully decoded your <span className="text-[#d9ff00]">Brand DNA</span> do we execute our high-intensity market discovery protocols. We analyze consumer psychology in Gurugram, and the global digital space to find the exact intersection where your value proposition meets high-intent demand.</p>
               <p>We bridge the gap between technical complexity and business growth. Our lab operates with the precision of a surgical unit, ensuring that every line of code, every pixel of creative asset, and every rupee of ad spend is optimized to <span className="text-[#d9ff00]">maximize your revenue engine</span>. We are not just your agency; we are your performance partners.</p>
             </div>
          </motion.div>
@@ -323,7 +323,7 @@ export default function WorkPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
           <div className="space-y-8 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.</p>
+            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.</p>
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Twitter size={20} /></a>
@@ -348,8 +348,8 @@ export default function WorkPage() {
             <div className="space-y-6">
               <p className="text-white font-black text-[9px] md:text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
               <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
-                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurgaon, HR</p>
-                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> scalecraftstudio7</p>
+                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurugram, HR</p>
+                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" />enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>

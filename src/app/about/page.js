@@ -107,7 +107,7 @@ export default function AboutPage() {
             THE ARCHITECTS <br /> <span className="text-zinc-800">OF AUTHORITY.</span>
           </h1>
           <p className="text-zinc-500 text-base md:text-xl font-medium leading-relaxed italic border-l-4 border-[#d9ff00]/20 pl-6 md:pl-10 max-w-4xl">
-            ScaleCraft Studio is a high-speed performance laboratory. Based in Gurgaon, we operate at the intersection of clinical data engineering and high-end visual storytelling.
+            ScaleCraft Studio is a high-speed performance laboratory. Based in Gurugram, we operate at the intersection of clinical data engineering and high-end visual storytelling.
           </p>
         </div>
       </section>
@@ -145,8 +145,13 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-6xl mx-auto">
           <div className="space-y-8 md:space-y-10 group text-center">
              <div className="max-w-[280px] md:max-w-[320px] aspect-[4/5] bg-zinc-900 border border-white/5 rounded-[40px] md:rounded-[48px] relative overflow-hidden shadow-2xl mx-auto">
-                <div className="absolute inset-0 flex items-center justify-center opacity-10"><Users size={100} /></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-black to-transparent">
+<div className="absolute inset-0 overflow-hidden">
+  <img 
+    src="/Mankirat.jpeg" 
+    alt="Mankirat Singh" 
+    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" 
+  />
+</div>                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-black to-transparent">
                    <SalesIcon className="text-[#d9ff00] mb-2" size={24} />
                    <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-tighter">Mr. Mankirat Singh</h3>
                 </div>
@@ -161,8 +166,13 @@ export default function AboutPage() {
 
           <div className="space-y-8 md:space-y-10 group text-center">
              <div className="max-w-[280px] md:max-w-[320px] aspect-[4/5] bg-zinc-900 border border-white/5 rounded-[40px] md:rounded-[48px] relative overflow-hidden shadow-2xl mx-auto">
-                <div className="absolute inset-0 flex items-center justify-center opacity-10"><Users size={100} /></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-black to-transparent">
+<div className="absolute inset-0 overflow-hidden">
+  <img 
+    src="/Aakash.jpeg" 
+    alt="Aakash Setia" 
+    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" 
+  />
+</div>                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-black to-transparent">
                    <Sparkles className="text-[#d9ff00] mb-2" size={24} />
                    <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-tighter">Mr. Aakash Setia</h3>
                 </div>
@@ -194,7 +204,7 @@ export default function AboutPage() {
 
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
              {[
-               { icon: <Landmark size={20}/>, title: "Premium Real Estate", desc: "Lead generation for luxury housing in Gurgaon, Noida, and Ghaziabad." },
+               { icon: <Landmark size={20}/>, title: "Premium Real Estate", desc: "Lead generation for luxury housing in Gurugram." },
                { icon: <Sparkles size={20}/>, title: "D2C Scaling", desc: "Taking home-grown brands and scaling them into household names." },
                { icon: <Fingerprint size={20}/>, title: "Visual Branding", desc: "Creating Luxury Identity Systems that mirror prestige." },
                { icon: <Binary size={20}/>, title: "Technical E-Com", desc: "Ultra-fast storefronts using Next.js and Vercel for ROI optimization." }
@@ -216,8 +226,15 @@ export default function AboutPage() {
          <div className="max-w-5xl mx-auto space-y-8 md:space-y-12">
 <Network size={80} className="text-[#d9ff00]/20 mx-auto" />            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">THE <span className="text-[#d9ff00]">VISION</span> FOR 2026.</h2>
             <div className="text-zinc-400 text-sm md:text-xl font-medium italic space-y-6 md:space-y-10 max-w-4xl mx-auto leading-relaxed">
-               <p>We are engineering <span className="text-[#d9ff00]">Business Operating Systems</span>, integrating AI creative intelligence with clinical data auditing.</p>
-               <p>Expanding our footprint from NCR to the global landscape, maintaining our core 'Brand DNA First' philosophy.</p>
+            <p>
+            As we move deeper into 2026, the mission of ScaleCraft Studio is undergoing a massive evolution. We are no longer just building marketing funnels; we are engineering <span className="text-[#d9ff00]">Business Operating Systems</span>. Our goal is to integrate AI-driven creative intelligence with clinical data auditing to ensure that our clients stay five steps ahead of the curve in an increasingly volatile global economy.
+         </p>
+         <p>
+            We are expanding our laboratory’s footprint from the NCR region to the global digital landscape. By maintaining our core 'Brand DNA First' philosophy, we ensure that every partnership we enter is not just a transaction, but a long-term investment in excellence. We believe that the future of commerce belongs to those who can bridge the gap between technical complexity and deep human connection.
+         </p>
+         <p>
+            Our vision is to become the primary performance infrastructure for the next generation of D2C brands and real estate giants. ScaleCraft is here to prove that with the right data architecture and a relentless focus on ROI, any ambitious brand can achieve unshakeable market dominance. We are not just your agency; we are your strategic partners in the science of scaling.
+         </p>
             </div>
          </div>
       </section>
@@ -227,7 +244,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
           <div className="space-y-8 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon.</p>
+            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram.</p>
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Twitter size={20} /></a>
@@ -246,8 +263,8 @@ export default function AboutPage() {
             <div className="space-y-6">
               <p className="text-white font-black text-[9px] md:text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
               <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
-                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurgaon, HR</p>
-                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> scalecraftstudio7</p>
+                <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurugram, HR</p>
+                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>
@@ -261,7 +278,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="mt-20 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[0.5em] md:tracking-[1em] font-black uppercase italic">© 2026 ScaleCraft Studio | Gurgaon</p>
+          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[0.5em] md:tracking-[1em] font-black uppercase italic">© 2026 ScaleCraft Studio | Gurugram</p>
         </div>
       </footer>
     </main>
