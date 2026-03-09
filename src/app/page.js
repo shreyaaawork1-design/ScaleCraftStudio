@@ -264,29 +264,74 @@ export default function ScaleCraftRefined() {
       <ShardCursor />
 
       {/* --- BRAND HEADER --- */}
-     <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] z-[1000] px-3 md:px-10 py-2 md:py-4 flex flex-col rounded-[20px] md:rounded-[32px] bg-white/[0.05] backdrop-blur-[40px] border border-white/20">
+     {/* --- BRAND HEADER: REFINED SPACING & MOBILE MENU --- */}
+<nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] z-[1000] px-3 md:px-10 py-2 md:py-4 flex flex-col rounded-[20px] md:rounded-[32px] bg-white/[0.05] backdrop-blur-[40px] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-700">
   <div className="flex justify-between items-center w-full">
     
-    {/* LOGO: Smaller size */}
-    <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white shrink-0">
+    {/* LOGO: Smaller size for more space */}
+    <div 
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white cursor-pointer shrink-0"
+    >
       SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
     </div>
 
-    {/* RIGHT ACTIONS: Grouping Button and Menu */}
+    {/* Desktop Nav (Hidden on Mobile) */}
+    <div className="hidden lg:flex gap-4">
+      {navData.map((item, i) => (
+        <Link key={i} href={item.link}>
+          <button className="px-6 py-2 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 hover:text-[#d9ff00] transition-all">
+            {item.label} 
+          </button>
+        </Link>
+      ))}
+    </div>
+
+    {/* RIGHT ACTIONS: Button + 3 Bars */}
     <div className="flex items-center gap-2 md:gap-4">
-      <Link href="/contact">
-        <button className="bg-[#d9ff00] text-black px-3 md:px-10 py-2 md:py-3.5 rounded-lg md:rounded-2xl font-[1000] text-[8px] md:text-[11px] uppercase tracking-wider shadow-lg flex items-center gap-1">
-          <Phone size={10} className="hidden sm:block" />
+      <Link href="/contact" className="relative z-[160]">
+        <button className="bg-[#d9ff00] text-black px-3 md:px-8 py-2 md:py-3.5 rounded-lg md:rounded-2xl font-[1000] text-[8px] md:text-[11px] uppercase tracking-wider shadow-lg hover:scale-105 transition-all flex items-center gap-1 border-none">
+          {/* PHONE ANIMATION: Visible on Mobile too */}
+          <Phone size={10} className="animate-bounce" />
           START SCALING
         </button>
       </Link>
 
-      {/* THREE BAR MENU */}
-      <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-1 hover:bg-white/10 rounded-md transition-colors">
+      {/* THREE BAR MENU (Hamburger) */}
+      <button 
+        onClick={() => setIsMenuOpen(!isMenuOpen)} 
+        className="lg:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+      >
         {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
     </div>
   </div>
+
+  {/* MOBILE DROPDOWN: Displays Services, Work, and About */}
+  <AnimatePresence>
+    {isMenuOpen && (
+      <motion.div 
+        initial={{ height: 0, opacity: 0 }} 
+        animate={{ height: 'auto', opacity: 1 }} 
+        exit={{ height: 0, opacity: 0 }}
+        className="lg:hidden overflow-hidden flex flex-col gap-1 mt-4 pb-4 px-2"
+      >
+        {navData.map((item, i) => (
+          <Link key={i} href={item.link} onClick={() => setIsMenuOpen(false)}>
+            <div className="flex flex-col py-3 border-b border-white/5 group">
+              <span className="text-zinc-400 group-hover:text-[#d9ff00] font-black uppercase tracking-widest text-[10px] transition-colors">
+                {item.label}
+              </span>
+              {/* Optional Description (Optional, can keep it empty as per your instruction) */}
+              <span className="text-zinc-600 text-[8px] uppercase tracking-tighter mt-1 italic">
+                {item.desc}
+              </span>
+            </div>
+          </Link>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
 </nav>
 
       {/* --- HERO SECTION --- */}
