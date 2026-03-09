@@ -2,15 +2,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 // Line 3: Isme useMotionValue add karna zaroori hai
 import { motion, AnimatePresence, useScroll, useSpring, useTransform, useMotionValue } from 'framer-motion';
-import { ChevronDown, ArrowRight, X, Ruler, PenTool, Layout, Activity, Target, Zap, Globe, TrendingUp, Mail, Phone, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight, Search, PencilRuler, Rocket, PieChart, Layers, Users, BarChart3, Shield, Cpu,MousePointer2 } from 'lucide-react';
+import { Menu, ChevronDown, ArrowRight, X, Ruler, PenTool, Layout, Activity, Target, Zap, Globe, TrendingUp, Mail, Phone, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight, Search, PencilRuler, Rocket, PieChart, Layers, Users, BarChart3, Shield, Cpu,MousePointer2 } from 'lucide-react';
 import Link from 'next/link'; // Sabse upar ye line honi chahiye
 
 // --- ALLIANCE PARTNERS (Exact Match with your Public Folder) ---
 const partners = [
-  { name: "UrbanSight Realty", logo: "/urbansightrealty.png" }, // Sidebar mein 'y' nahi tha shayad
-  { name: "Divinity Creations", logo: "/divinitycreations.png" }, // Sidebar mein 's' nahi tha shayad
+  { name: "UrbanSight Realty", logo: "/urbansightrealty.png" }, 
+  { name: "Divinity Creations", logo: "/divinitycreations.png" }, 
   { name: "PhotoBox", logo: "/photobox.jpg" }, 
-  { name: "Stonefeild Farms", logo: "/stonefieldfarms.png" }, // 'field' and 'farms' fix
+  { name: "Stonefeild Farms", logo: "/stonefieldfarms.png" }, 
 ];
 
 const navData = [
@@ -62,7 +62,7 @@ const HeroSlideshow = ({ children }) => {
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.18, scale: 1 }}
+            animate={{ opacity: 0.18, scale: 1 }} 
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
@@ -77,7 +77,7 @@ const HeroSlideshow = ({ children }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
       </div>
 
-      <div className="relative z-10 py-12 px-6 md:py-20 md:px-20">
+      <div className="relative z-10 py-10 px-6 md:py-20 md:px-20">
         {children}
       </div>
 
@@ -148,10 +148,11 @@ const strategyPlans = [
   }
 ];
 
-const HoverUnderline = ({ children }) => (
-  <span className="relative group cursor-none inline-block">
-    <span className="group-hover:text-[#d9ff00] transition-colors duration-300">{children}</span>
-    <span className="absolute left-0 -bottom-0.5 w-0 h-[1.2px] bg-[#d9ff00] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(217,255,0,0.5)]" />
+// --- HELPERS ---
+const HoverUnderline = ({ children, isNeon }) => (
+  <span className={`relative group cursor-none inline-block ${isNeon ? 'text-[#d9ff00]' : ''}`}>
+    <span className={`${isNeon ? 'text-[#d9ff00]' : 'group-hover:text-[#d9ff00]'} transition-colors duration-300`}>{children}</span>
+    <span className="absolute left-0 -bottom-0.5 w-full h-[1.2px] bg-[#d9ff00] shadow-[0_0_8px_rgba(217,255,0,0.5)]" />
   </span>
 );
 
@@ -172,7 +173,7 @@ const CalibratedWord = ({ children, type }) => {
       ref={ref} onMouseMove={handleMouse} onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={type === 'highlight' ? { x: pos.x, y: pos.y } : { x: 0, y: 0 }}
       whileHover={{ color: "#d9ff00" }}
-      className={`relative inline-block px-1 md:px-3 transition-colors cursor-none group ${type === 'highlight' ? 'text-4xl sm:text-6xl md:text-[85px] font-black' : 'text-lg sm:text-xl md:text-[32px] font-bold text-zinc-600'} ${isCraft ? 'text-[#d9ff00]' : ''}`}
+      className={`relative inline-block px-1 md:px-3 transition-colors cursor-none group ${type === 'highlight' ? 'text-4xl sm:text-7xl md:text-[85px] font-black' : 'text-base sm:text-2xl md:text-[32px] font-bold text-zinc-600'} ${isCraft ? 'text-[#d9ff00]' : ''}`}
     >
       {children}
       {type === 'highlight' && (
@@ -190,6 +191,7 @@ const CalibratedWord = ({ children, type }) => {
 const ShardCursor = () => {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
+
   const smoothX = useSpring(mouseX, { damping: 25, stiffness: 800, mass: 0.1 });
   const smoothY = useSpring(mouseY, { damping: 25, stiffness: 800, mass: 0.1 });
 
@@ -222,28 +224,27 @@ const StrategyCard = ({ plan, index }) => (
     initial={{ opacity: 0, y: 50 }} 
     whileInView={{ opacity: 1, y: 0 }} 
     viewport={{ once: true }}
-    className="sticky top-24 md:top-40 bg-zinc-950 border border-white/5 p-6 md:p-12 rounded-[30px] md:rounded-[50px] shadow-[0_-30px_60px_rgba(0,0,0,0.9)] min-h-[320px] md:h-[380px] mb-10 md:mb-20 flex flex-col justify-between group overflow-hidden"
-    style={{ zIndex: index + 10, marginTop: index === 0 ? 0 : '-60px' }}
+    className="sticky top-24 md:top-40 bg-zinc-950 border border-white/5 p-8 md:p-12 rounded-[30px] md:rounded-[50px] shadow-[0_-30px_60px_rgba(0,0,0,0.9)] h-auto md:h-[380px] mb-10 md:mb-20 flex flex-col justify-between group overflow-hidden"
+    style={{ zIndex: index + 10, marginTop: index === 0 ? 0 : '-80px' }}
   >
-    <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-[#d9ff00]/5 blur-[60px] md:blur-[100px] pointer-events-none" />
+    <div className="absolute top-0 right-0 w-64 h-64 bg-[#d9ff00]/5 blur-[100px] pointer-events-none" />
     
     <div>
-      <span className="text-[#d9ff00] font-black text-[7px] md:text-[9px] tracking-[0.4em] uppercase block mb-2 md:mb-4 italic opacity-30">SYSTEM_MODEL_0{index + 1}</span>
-      <h4 className="text-2xl md:text-5xl font-black uppercase italic text-white mb-4 md:mb-6 tracking-tighter leading-none">{plan.title}</h4>
-      <p className="text-zinc-500 text-xs md:text-base font-medium leading-relaxed italic max-w-2xl border-l-2 border-[#d9ff00]/20 pl-4 md:pl-8 group-hover:text-zinc-300 transition-colors">
+      <span className="text-[#d9ff00] font-black text-[9px] tracking-[0.4em] uppercase block mb-4 italic opacity-30">SYSTEM_MODEL_0{index + 1}</span>
+      <h4 className="text-2xl md:text-5xl font-black uppercase italic text-white mb-6 tracking-tighter leading-none">{plan.title}</h4>
+      <p className="text-zinc-500 text-xs md:text-base font-medium leading-relaxed italic max-w-2xl border-l-2 border-[#d9ff00]/20 pl-6 md:pl-8 group-hover:text-zinc-300 transition-colors">
         {plan.desc}
       </p>
     </div>
 
-    <div className="text-zinc-800 font-mono text-[7px] md:text-[9px] uppercase tracking-widest italic font-bold mt-4">
+    <div className="text-zinc-800 font-mono text-[9px] uppercase tracking-widest italic font-bold mt-6">
         Engineering_Status: Ready_to_Deploy
     </div>
   </motion.div>
 );
 
 export default function ScaleCraftRefined() {
-  const [activeNav, setActiveNav] = useState(null);
-  const [isNexusOpen, setIsNexusOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const ladderRef = useRef(null);
 
@@ -262,7 +263,8 @@ export default function ScaleCraftRefined() {
       <div className="noise-overlay" />
       <ShardCursor />
 
-      <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] z-[150] px-4 md:px-10 py-4 md:py-5 flex flex-col rounded-[20px] md:rounded-[32px] overflow-visible transition-all duration-700 bg-white/[0.05] backdrop-blur-[50px] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      {/* --- BRAND HEADER --- */}
+      <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] z-[500] px-4 md:px-10 py-3 md:py-5 flex flex-col rounded-[24px] md:rounded-[32px] overflow-visible transition-all duration-700 bg-white/[0.05] backdrop-blur-[50px] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
         <div className="flex justify-between items-center w-full">
           <div 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -283,38 +285,58 @@ export default function ScaleCraftRefined() {
             ))}
           </div>
 
-          <Link href="/contact" className="relative z-[160]">
-            <button className="bg-[#d9ff00] text-black px-4 md:px-10 py-2.5 md:py-3.5 rounded-xl md:rounded-2xl font-[1000] text-[9px] md:text-[11px] uppercase tracking-[0.2em] shadow-[0_0_25px_rgba(217,255,0,0.4)] hover:shadow-[0_0_45px_rgba(217,255,0,0.8)] hover:scale-105 transition-all flex items-center gap-2 group border-none">
-              <Phone size={12} className="group-hover:animate-bounce hidden sm:block" />
-              START SCALING
+          <div className="flex items-center gap-2">
+            <Link href="/contact" className="relative z-[160]">
+              <button className="bg-[#d9ff00] text-black px-4 md:px-10 py-2.5 md:py-3.5 rounded-xl md:rounded-2xl font-[1000] text-[9px] md:text-[11px] uppercase tracking-[0.2em] shadow-[0_0_25px_rgba(217,255,0,0.4)] hover:shadow-[0_0_45px_rgba(217,255,0,0.8)] hover:scale-105 transition-all flex items-center gap-2 group border-none">
+                <Phone size={12} className="animate-bounce" />
+                START SCALING
+              </button>
+            </Link>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-2">
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </Link>
+          </div>
         </div>
+
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              initial={{ height: 0, opacity: 0 }} 
+              animate={{ height: 'auto', opacity: 1 }} 
+              exit={{ height: 0, opacity: 0 }}
+              className="lg:hidden overflow-hidden flex flex-col gap-4 mt-4 pb-4"
+            >
+              {navData.map((item, i) => (
+                <Link key={i} href={item.link} onClick={() => setIsMenuOpen(false)}>
+                  <span className="text-zinc-400 font-black uppercase tracking-widest text-[10px] py-2 block border-b border-white/5">{item.label}</span>
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
+      {/* --- HERO SECTION --- */}
       <section className="min-h-screen flex flex-col justify-center px-6 md:px-24 pt-32 md:pt-40 relative overflow-hidden">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-7xl z-10 text-left">
-          <span className="text-[#d9ff00] font-bold tracking-[0.3em] md:tracking-[0.5em] text-[10px] md:text-[13px] uppercase block mb-6 md:mb-10 italic opacity-80 drop-shadow-[0_0_8px_rgba(217,255,0,0.2)]">
+          <span className="text-[#d9ff00] font-bold tracking-[0.3em] md:tracking-[0.5em] text-[10px] md:text-[13px] uppercase block mb-10 italic opacity-80 drop-shadow-[0_0_8px_rgba(217,255,0,0.2)]">
             Leading Performance Lab in Gurugram
           </span>
 
           <HeroSlideshow>
             <h1 className="flex flex-col items-start gap-0 uppercase">
-              <div className="flex flex-col">
                 <CalibratedWord type="highlight">SCALE</CalibratedWord>
                 <CalibratedWord type="standard">YOUR REACH.</CalibratedWord>
-              </div>
-              <div className="flex flex-col mt-4">
                 <CalibratedWord type="highlight">CRAFT</CalibratedWord>
                 <CalibratedWord type="standard">YOUR LEGACY.</CalibratedWord>
-              </div>
             </h1>
 
             <div className="mt-12 md:mt-24 max-w-2xl border-l-4 border-[#d9ff00]/20 pl-6 md:pl-10 md:ml-auto md:mr-16 text-left md:text-right relative z-10">
               <p className="text-zinc-400 text-base md:text-xl font-medium leading-relaxed italic drop-shadow-2xl">
-                We, at <HoverUnderline>Scale</HoverUnderline><HoverUnderline>Craft</HoverUnderline> Studio, blend artistic precision with performance branding to build your brand a standard. We aren't just any other marketing agency, we're the only stop you need to take in your startup journey. So, Why not craft something and scale together?
+                We, at <HoverUnderline isNeon={true}>ScaleCraft Studio</HoverUnderline>, blend artistic precision with performance branding to build your brand a standard. We aren't just any other marketing agency, we're the only stop you need to take in your startup journey. So, Why not <HoverUnderline>craft</HoverUnderline> something and <HoverUnderline>scale</HoverUnderline> together?
               </p>
-              <div className="flex justify-start md:justify-end mt-8 md:mt-10">
+              <div className="flex justify-start md:justify-end mt-10">
                 <Link href="/contact">
                   <button className="bg-[#d9ff00] text-black px-8 md:px-12 py-4 md:py-6 font-extrabold uppercase text-[9px] md:text-[10px] tracking-[0.3em] transition-all duration-300 shadow-[0_0_20px_#d9ff00] hover:shadow-[0_0_35px_#d9ff00] hover:scale-105 rounded-xl flex items-center gap-3 group">
                     Get in Touch 
@@ -327,10 +349,11 @@ export default function ScaleCraftRefined() {
         </motion.div>
       </section>
 
+      {/* --- PIPELINE --- */}
       <section className="py-24 md:py-48 bg-black relative border-y border-white/5 px-6 md:px-24">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-16">
-          <div className="md:sticky top-32 md:top-48 h-fit max-w-sm">
-            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-4 md:mb-6">Our Path</h2>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
+          <div className="md:sticky top-48 h-fit max-w-sm">
+            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-6">Our Path</h2>
             <h3 className="text-4xl md:text-5xl font-black uppercase italic leading-none tracking-tighter text-white">THE STRATEGIC <br /> <span className="text-zinc-800 italic">BLUEPRINT.</span></h3>
           </div>
           <div className="flex-1 space-y-16 md:space-y-24">
@@ -346,10 +369,11 @@ export default function ScaleCraftRefined() {
         </div>
       </section>
 
+      {/* --- SOLUTIONS --- */}
       <section className="py-24 md:py-48 bg-[#050505] px-6 md:px-24 border-b border-white/5 relative">
-        <div className="max-w-7xl mx-auto mb-16 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10">
+        <div className="max-w-7xl mx-auto mb-16 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
           <div className="max-w-2xl">
-            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-4 md:mb-6">Revenue Systems</h2>
+            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-6">Revenue Systems</h2>
             <h3 className="text-4xl md:text-7xl font-[1000] uppercase italic leading-none tracking-tighter text-white">
                 PERFORMANCE <br /> <span className="text-zinc-800">ARCHITECTURE.</span>
             </h3>
@@ -357,13 +381,13 @@ export default function ScaleCraftRefined() {
           <p className="text-zinc-500 text-sm md:text-base font-medium max-w-sm italic md:text-right">We design specialized growth models that turn your brand into a market leader.</p>
         </div>
 
-        <div className="max-w-5xl mx-auto relative pb-16 md:pb-32">
+        <div className="max-w-5xl mx-auto relative pb-20 md:pb-32">
           {strategyPlans.map((plan, i) => (<StrategyCard key={i} plan={plan} index={i} />))}
         </div>
 
-        <div className="max-w-5xl mx-auto flex justify-start md:justify-end relative z-[150] -mt-6 md:-mt-10">
+        <div className="max-w-5xl mx-auto flex justify-start md:justify-end relative z-[150] -mt-10">
            <Link href="/services#pricing">
-             <button className="bg-[#d9ff00] text-black px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-[1000] text-[10px] md:text-[11px] uppercase tracking-[0.3em] shadow-[0_0_30px_rgba(217,255,0,0.3)] hover:shadow-[0_0_50px_#d9ff00] hover:scale-105 transition-all flex items-center gap-3 group">
+             <button className="bg-[#d9ff00] text-black px-10 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-[1000] text-[10px] md:text-[11px] uppercase tracking-[0.3em] shadow-[0_0_30px_rgba(217,255,0,0.3)] hover:shadow-[0_0_50px_#d9ff00] hover:scale-105 transition-all flex items-center gap-3 group">
                 VIEW FULL SETUP 
                 <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
              </button>
@@ -371,15 +395,16 @@ export default function ScaleCraftRefined() {
         </div>
       </section>
 
+      {/* --- THE SCALECRAFT EDGE (BENTO GRID) --- */}
       <section className="py-24 md:py-48 bg-black relative px-6 md:px-24 overflow-hidden border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-20">
-            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.5em] italic mb-4 md:mb-6">The Competitive Advantage</h2>
+            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.5em] italic mb-6">The Competitive Advantage</h2>
             <h3 className="text-4xl md:text-6xl font-[1000] uppercase italic leading-none tracking-tighter text-white">WHY WE ARE <br /> <span className="text-zinc-800">UNBEATABLE.</span></h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="md:col-span-2 bg-zinc-950 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-between group hover:border-[#d9ff00]/20 transition-all min-h-[250px]">
+            <motion.div className="md:col-span-2 bg-zinc-950 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-between group hover:border-[#d9ff00]/20 transition-all min-h-[280px]">
               <Activity className="text-[#d9ff00] mb-6" size={24} />
               <div>
                 <h4 className="text-xl font-black uppercase italic text-white mb-4">Data Mastery</h4>
@@ -389,7 +414,7 @@ export default function ScaleCraftRefined() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
               <MapPin className="text-[#d9ff00] mb-6" size={24} />
               <h4 className="text-xl font-black uppercase italic text-white mb-3">Local Logic</h4>
               <p className="text-zinc-500 text-xs font-medium italic leading-loose">
@@ -397,7 +422,7 @@ export default function ScaleCraftRefined() {
               </p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
               <Zap className="text-[#d9ff00] mb-6" size={24} />
               <h4 className="text-xl font-black uppercase italic text-white mb-3">Rapid Scale</h4>
               <p className="text-zinc-500 text-xs font-medium italic leading-loose">
@@ -405,7 +430,7 @@ export default function ScaleCraftRefined() {
               </p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="md:col-span-2 bg-zinc-950 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-between group hover:border-[#d9ff00]/20 transition-all min-h-[250px]">
+            <motion.div className="md:col-span-2 bg-zinc-950 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-between group hover:border-[#d9ff00]/20 transition-all min-h-[280px]">
               <Layers className="text-[#d9ff00] mb-6" size={24} />
               <div>
                 <h4 className="text-xl font-black uppercase italic text-white mb-4">Tech First Stack</h4>
@@ -415,7 +440,7 @@ export default function ScaleCraftRefined() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
               <Globe className="text-[#d9ff00] mb-6" size={24} />
               <h4 className="text-xl font-black uppercase italic text-white mb-3">Custom Systems</h4>
               <p className="text-zinc-500 text-xs font-medium italic leading-loose">
@@ -423,29 +448,52 @@ export default function ScaleCraftRefined() {
               </p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
               <TrendingUp className="text-[#d9ff00] mb-6" size={24} />
               <h4 className="text-xl font-black uppercase italic text-white mb-3">Revenue ROI</h4>
               <p className="text-zinc-500 text-xs font-medium italic leading-loose">
                   Prioritize cash revenue over vanity metrics. We chase clinical <span className="text-[#d9ff00]">Return on Ad Spend (ROAS)</span>.
               </p>
             </motion.div>
+
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+              <Shield className="text-[#d9ff00] mb-6" size={24} />
+              <h4 className="text-xl font-black uppercase italic text-white mb-3">Authority Hub</h4>
+              <p className="text-zinc-500 text-xs font-medium italic leading-loose">
+                  We don't just run ads; we install <span className="text-[#d9ff00]">authority frameworks</span>. Bridge visual prestige and performance.
+              </p>
+            </motion.div>
+
+            <motion.div className="md:col-span-2 bg-zinc-950 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-between group hover:border-[#d9ff00]/20 transition-all min-h-[280px]">
+              <Cpu className="text-[#d9ff00] mb-6" size={24} />
+              <div>
+                <h4 className="text-xl font-black uppercase italic text-white mb-4">Retention Tech</h4>
+                <p className="text-zinc-500 text-sm font-medium italic leading-relaxed max-w-2xl">
+                   We engineer <span className="text-[#d9ff00]">retention-focused systems</span> that compound growth through automated CRM integrations, turning buyers into advocates.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="bg-zinc-900/40 border border-white/5 p-8 md:p-10 rounded-[30px] md:rounded-[40px] flex flex-col justify-center group hover:bg-zinc-900/60 transition-all min-h-[250px]">
+              <Target className="text-[#d9ff00] mb-6" size={24} />
+              <h4 className="text-xl font-black uppercase italic text-white mb-3">Creative Lab</h4>
+              <p className="text-zinc-500 text-xs font-medium italic leading-loose">
+                  High-retention cinematic assets. Bridge <span className="text-[#d9ff00]">artistry and performance</span> logic for algorithmic dominance.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
+      {/* --- ROADMAP --- */}
       <section ref={ladderRef} className="py-24 md:py-48 bg-black relative overflow-hidden px-6 md:px-10">
         <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
-            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-4 md:mb-6">Our Trajectory</h2>
+            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-6">Our Trajectory</h2>
             <h3 className="text-4xl md:text-6xl font-[1000] uppercase italic tracking-tighter leading-none text-white">THE ASCENSION PATH.</h3>
         </div>
 
         <div className="relative h-[400px] md:h-[600px] max-w-5xl mx-auto border border-white/5 rounded-[30px] md:rounded-[60px] bg-white/[0.01] backdrop-blur-sm overflow-hidden">
-            <svg 
-              viewBox="0 0 100 100" 
-              preserveAspectRatio="none" 
-              className="absolute inset-0 w-full h-full p-0 pointer-events-none z-10"
-            >
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full p-0 pointer-events-none z-10">
               <motion.path 
                 d="M 10 80 C 20 80, 25 50, 35 50 S 55 60, 65 60 S 80 20, 90 20" 
                 fill="transparent" 
@@ -460,19 +508,14 @@ export default function ScaleCraftRefined() {
             {ladderPoints.map((point, i) => (
               <motion.div 
                 key={i} 
-                initial={{ opacity: 0 }} 
-                whileInView={{ opacity: 1 }} 
-                transition={{ delay: i * 0.1 }} 
                 style={{ left: point.x, top: point.y }} 
                 className="absolute group flex flex-col items-center -translate-x-1/2 -translate-y-1/2 z-20"
               >
-                <div className="w-3 h-3 md:w-5 md:h-5 bg-[#d9ff00] rounded-full shadow-[0_0_30px_#d9ff00] cursor-none scale-100 group-hover:scale-125 transition-transform" />
-                
+                <div className="w-4 h-4 md:w-5 md:h-5 bg-[#d9ff00] rounded-full shadow-[0_0_30px_#d9ff00]" />
                 <div className="mt-4 md:mt-8 flex flex-col items-center">
-                  <div className="bg-black/80 backdrop-blur-3xl border border-white/10 p-3 md:p-5 rounded-[16px] md:rounded-[24px] text-center min-w-[140px] md:min-w-[200px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                     <p className="text-[#d9ff00] font-black text-[7px] md:text-[9px] uppercase tracking-[0.4em] mb-1 md:mb-2 italic opacity-60">MISSION_STEP_0{i+1}</p>
-                     <p className="text-white font-[1000] uppercase text-[10px] md:text-[13px] tracking-tighter leading-tight" 
-                        dangerouslySetInnerHTML={{ __html: point.label.split(': ')[1] }} />
+                  <div className="bg-black/80 backdrop-blur-3xl border border-white/10 p-3 md:p-5 rounded-xl md:rounded-[24px] text-center min-w-[120px] md:min-w-[200px]">
+                     <p className="text-[#d9ff00] font-black text-[7px] md:text-[9px] uppercase mb-2">MISSION_STEP_0{i+1}</p>
+                     <p className="text-white font-black uppercase text-[10px] md:text-[13px]">{point.label.split(': ')[1]}</p>
                   </div>
                 </div>
               </motion.div>
@@ -480,73 +523,48 @@ export default function ScaleCraftRefined() {
         </div>
       </section>
 
+      {/* --- DUAL FOUNDERS --- */}
       <section id="founders" className="py-24 md:py-64 bg-black text-white px-6 md:px-24 border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-12 md:gap-10 relative z-10">
-            
             <div className="flex justify-center items-center">
                <div className="relative w-full max-w-[300px] h-[400px] md:max-w-[350px] md:h-[480px] rounded-[30px] md:rounded-[50px] overflow-hidden border border-[#d9ff00]/20 bg-[#080808] shadow-2xl">
-                 <img 
-                   src="Mankirat.jpeg" 
-                   alt="Mankirat Singh" 
-                   className="absolute inset-0 w-full h-full object-cover object-top"
-                 />
-                 <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 bg-gradient-to-t from-black via-black/80 to-transparent z-30">
-                    <p className="font-[1000] uppercase text-xl md:text-2xl italic leading-none text-white">MANKIRAT SINGH</p>
-                    <p className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] mt-2 md:mt-3 text-[#d9ff00] italic">CEO & FOUNDER</p>
+                 <img src="Mankirat.jpeg" alt="Mankirat Singh" className="absolute inset-0 w-full h-full object-cover object-top" />
+                 <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 bg-gradient-to-t from-black via-black/80 to-transparent">
+                    <p className="font-black uppercase text-xl md:text-2xl italic leading-none">MANKIRAT SINGH</p>
+                    <p className="text-[8px] md:text-[9px] font-black uppercase mt-3 text-[#d9ff00]">CEO & FOUNDER</p>
                  </div>
                </div>
             </div>
 
-            <div className="text-center px-4 md:px-8 space-y-8 md:space-y-12 self-center">
-               <div className="flex flex-col items-center gap-4 md:gap-6">
-                  <div className="w-[1px] h-12 md:h-20 bg-gradient-to-b from-transparent via-[#d9ff00]/40 to-transparent" />
-                  <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.6em] md:tracking-[0.8em] text-zinc-800 italic">Visionaries</span>
+            <div className="text-center px-4 md:px-8 space-y-12">
+               <div className="flex flex-col items-center gap-6">
+                  <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-[#d9ff00]/40 to-transparent" />
+                  <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.8em] text-zinc-800">Visionaries</span>
                </div>
-               <h6 className="text-xs md:text-base font-[500] uppercase italic leading-loose tracking-tight text-zinc-500">
-                  "At <span className="text-white">ScaleCraft Studio</span>, growth is engineered — never accidental. 
-                  We build <span className="text-[#d9ff00]">performance-driven</span> systems 
-                  designed to convert and compound. Every stratergy we craft is built to deliver measurable, lasting impact"
+               <h6 className="text-xs md:text-base font-medium uppercase italic leading-loose tracking-tight text-zinc-500">
+                  "At <span className="text-white">ScaleCraft Studio</span>, growth is engineered — never accidental. We build <span className="text-[#d9ff00]">performance-driven</span> systems designed to convert and compound."
                </h6>
-               <div className="w-12 md:w-16 h-[1px] bg-zinc-900 mx-auto" />
             </div>
 
             <div className="flex justify-center items-center">
                <div className="relative w-full max-w-[300px] h-[400px] md:max-w-[350px] md:h-[480px] rounded-[30px] md:rounded-[50px] overflow-hidden border border-[#d9ff00]/20 bg-[#080808] shadow-2xl">
-                 <img 
-                   src="Aakash.jpeg" 
-                   alt="Aakash Setia" 
-                   className="absolute inset-0 w-full h-full object-cover object-top"
-                 />
-                 <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 bg-gradient-to-t from-black via-black/80 to-transparent z-30">
-                    <p className="font-[1000] uppercase text-xl md:text-2xl italic leading-none text-white">AAKASH SETIA</p>
-                    <p className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] mt-2 md:mt-3 text-[#d9ff00] italic">COO & FOUNDER</p>
+                 <img src="Aakash.jpeg" alt="Aakash Setia" className="absolute inset-0 w-full h-full object-cover object-top" />
+                 <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 bg-gradient-to-t from-black via-black/80 to-transparent">
+                    <p className="font-black uppercase text-xl md:text-2xl italic leading-none">AAKASH SETIA</p>
+                    <p className="text-[8px] md:text-[9px] font-black uppercase mt-3 text-[#d9ff00]">COO & FOUNDER</p>
                  </div>
                </div>
             </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-28 bg-[#d9ff00] overflow-hidden border-y border-black/10 relative z-40">
-        <motion.div 
-          animate={{ x: ["0%", "-50%"] }} 
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }} 
-          className="flex gap-12 md:gap-24 whitespace-nowrap items-center w-max"
-        >
+      {/* --- ALLIANCE STRIPE --- */}
+      <section className="py-20 md:py-28 bg-[#d9ff00] overflow-hidden border-y border-black/10 relative z-40">
+        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="flex gap-12 md:gap-24 whitespace-nowrap items-center w-max">
           {[...partners, ...partners, ...partners].map((item, i) => (
             <div key={i} className="flex items-center gap-12 md:gap-24">
               <div className="w-48 h-20 md:w-72 md:h-28 flex items-center justify-center relative">
-                <img 
-                  src={item.logo} 
-                  alt={item.name} 
-                  className="max-h-full max-w-full object-contain scale-110 md:scale-125 transition-transform duration-500" 
-                  onError={(e) => { 
-                    e.target.style.display = 'none'; 
-                    e.target.nextSibling.style.display = 'block'; 
-                  }}
-                />
-                <span className="hidden text-black font-black text-xl md:text-2xl uppercase tracking-tighter italic">
-                  {item.name}
-                </span>
+                <img src={item.logo} alt={item.name} className="max-h-full max-w-full object-contain scale-110 md:scale-125" />
               </div>
               <div className="w-3 h-3 md:w-4 md:h-4 bg-black/15 rotate-45" />
             </div>
@@ -554,73 +572,62 @@ export default function ScaleCraftRefined() {
         </motion.div>
       </section>
 
+      {/* --- CONTACT SECTION --- */}
       <section id="contact" className="py-24 md:py-48 bg-zinc-950 px-6 md:px-24 border-y border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-[#d9ff00]/5 blur-[60px] md:blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-20">
-          <div className="flex-1 space-y-6 md:space-y-8">
-            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-4 md:mb-6 opacity-60">Forge Connection</h2>
+          <div className="flex-1 space-y-8">
+            <h2 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-6 opacity-60">Forge Connection</h2>
             <h3 className="text-4xl md:text-7xl font-black uppercase italic leading-none tracking-tighter text-white">LET'S <br /> BUILD THE <br /> <span className="text-zinc-800">STANDARD.</span></h3>
-            <p className="text-zinc-500 text-base md:text-xl font-medium max-w-lg italic border-l-4 border-[#d9ff00]/20 pl-6 md:pl-8 ml-0 text-left">We aren't a service; we are a partnership. Define your startup blueprint and let's engineer your predictable market authority.</p>
+            <p className="text-zinc-500 text-base md:text-xl font-medium max-w-lg italic border-l-4 border-[#d9ff00]/20 pl-6 text-left">We aren't a service; we are a partnership. Define your startup blueprint and let's engineer your predictable market authority.</p>
           </div>
           
           <div className="flex-shrink-0 relative group self-center md:self-auto">
-            <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center bg-zinc-900 shadow-2xl overflow-hidden hover:border-[#d9ff00]/30 transition-all duration-700"
-            >
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" target="_blank" rel="noopener noreferrer" className="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center bg-zinc-900 shadow-2xl overflow-hidden hover:border-[#d9ff00]/30 transition-all duration-700">
               <div className="absolute inset-0 bg-[#d9ff00] scale-0 group-hover:scale-100 transition-transform duration-700 rounded-full" />
               <div className="flex flex-col items-center gap-2 z-10 transition-colors duration-700 group-hover:text-black">
-                <span className="text-zinc-500 font-extrabold uppercase text-[8px] md:text-[10px] tracking-[0.3em] italic group-hover:text-black transition-colors">
-                  A formal Enquiry?
-                </span>
-                <Mail size={28} className="text-[#d9ff00] group-hover:text-black transition-colors" />
+                <span className="text-zinc-500 font-black uppercase text-[8px] md:text-[10px] tracking-[0.3em] group-hover:text-black">A formal Enquiry?</span>
+                <Mail size={32} className="text-[#d9ff00] group-hover:text-black" />
               </div>
             </a>
           </div>
         </div>
       </section>
 
+      {/* --- FOOTER --- */}
       <footer className="py-16 md:py-24 bg-black border-t border-white/5 px-6 md:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
-          <div className="space-y-6 md:space-y-8 text-white">
+          <div className="space-y-6 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.</p>
+            <p className="text-zinc-500 font-medium italic text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.</p>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:gap-10">
-            <div className="space-y-4 md:space-y-6">
-              <p className="text-white font-black text-[9px] md:text-[10px] uppercase tracking-widest italic border-b border-[#d9ff00]/20 pb-2">LINKS</p>
-              <ul className="space-y-3 text-zinc-500 font-bold uppercase text-[8px] md:text-[9px] tracking-widest">
+          <div className="grid grid-cols-2 gap-10">
+            <div className="space-y-4">
+              <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">LINKS</p>
+              <ul className="space-y-3 text-zinc-500 font-bold uppercase text-[9px] tracking-widest">
                 <li className="hover:text-[#d9ff00] cursor-pointer">Services</li>
-                <li className="hover:text-[#d9ff00] cursor-pointer">
-                  <a href="#founders" className="block w-full">Founders</a>
-                </li>
+                <li className="hover:text-[#d9ff00] cursor-pointer"><a href="#founders">Founders</a></li>
                 <li className="hover:text-[#d9ff00] cursor-pointer">Success Cases</li>
               </ul>
             </div>
-            <div className="space-y-4 md:space-y-6">
-              <p className="text-white font-black text-[9px] md:text-[10px] uppercase tracking-widest italic border-b border-[#d9ff00]/20 pb-2">HQ</p>
-              <div className="space-y-3 md:space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
-                <p className="flex gap-2 md:gap-3"><MapPin size={12} className="text-[#d9ff00] shrink-0" /> Gurgaon, HR</p>
-                <p className="flex gap-2 md:gap-3 truncate"><Mail size={12} className="text-[#d9ff00] shrink-0" /> scalecraftstudio7</p>
+            <div className="space-y-4">
+              <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
+              <div className="space-y-3 text-zinc-500 text-[9px] font-bold uppercase">
+                <p className="flex gap-3"><MapPin size={14} className="text-[#d9ff00]" /> Gurgaon, HR</p>
+                <p className="flex gap-3 truncate"><Mail size={14} className="text-[#d9ff00]" /> scalecraftstudio7</p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center md:items-end justify-center text-center md:text-right space-y-6 md:space-y-8">
-            <h4 className="text-2xl md:text-4xl font-black uppercase italic leading-none tracking-tighter text-white">READY TO <br /> <span className="text-zinc-800 underline decoration-[#d9ff00]/30 italic">SCALE FAST?</span></h4>
+          <div className="flex flex-col items-center md:items-end space-y-8">
+            <h4 className="text-3xl md:text-4xl font-black uppercase italic text-white text-center md:text-right">READY TO <br /> <span className="text-zinc-800 underline decoration-[#d9ff00]/30">SCALE FAST?</span></h4>
             <Link href="/contact">
               <button className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:bg-[#d9ff00] transition-all duration-700 shadow-2xl">
-                 <div className="absolute inset-0 bg-white/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
-                 <span className="text-white group-hover:text-black font-black uppercase text-[8px] md:text-[9px] tracking-[0.3em] z-10 text-center leading-tight">
-                   BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" size={12} />
-                 </span>
+                 <span className="text-white group-hover:text-black font-black uppercase text-[9px] z-10 text-center">BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" /></span>
               </button>
             </Link>
           </div>
         </div>
-        <div className="mt-16 md:mt-20 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[7px] md:text-[8px] tracking-[0.5em] md:tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurgaon</p>
+        <div className="mt-16 pt-8 border-t border-white/5 text-center md:text-left">
+          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurgaon</p>
         </div>
       </footer>
     </div>
