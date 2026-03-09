@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Line 3: Isme useMotionValue add karna zaroori hai
 import { motion, AnimatePresence, useScroll, useSpring, useTransform, useMotionValue } from 'framer-motion';
 import { Menu, ChevronDown, ArrowRight, X, Ruler, PenTool, Layout, Activity, Target, Zap, Globe, TrendingUp, Mail, Phone, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight, Search, PencilRuler, Rocket, PieChart, Layers, Users, BarChart3, Shield, Cpu,MousePointer2 } from 'lucide-react';
+
 import Link from 'next/link'; // Sabse upar ye line honi chahiye
 
 // --- ALLIANCE PARTNERS (Exact Match with your Public Folder) ---
@@ -607,40 +608,104 @@ export default function ScaleCraftRefined() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="py-16 md:py-24 bg-black border-t border-white/5 px-6 md:px-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
-          <div className="space-y-6 text-white">
-            <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.</p>
+      {/* --- FINAL REFINED FOOTER --- */}
+      <footer className="py-24 bg-black border-t border-white/5 px-10 md:px-24">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 items-start">
+          
+          {/* 1. BRAND & SOCIALS */}
+          <div className="space-y-8 text-white">
+            <div className="text-3xl font-black tracking-tighter uppercase italic">
+              SCALE<span className="text-[#d9ff00]">CRAFT.</span>
+            </div>
+            <p className="text-zinc-500 font-medium italic max-w-xs text-sm leading-relaxed">
+              Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.
+            </p>
+            
+            {/* SOCIAL ICONS SECTION */}
+            <div className="flex gap-6 items-center">
+              {/* Instagram */}
+              <a href="#" target="_blank" className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110">
+                <Instagram size={20} />
+              </a>
+              {/* Twitter / X */}
+              <a href="#" target="_blank" className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110">
+                <Twitter size={20} />
+              </a>
+              {/* Gmail / Enquiry */}
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=scalecraftstudio7@gmail.com&su=Project%20Inquiry%20-%20ScaleCraft%20Studio" 
+                target="_blank" 
+                className="text-zinc-500 hover:text-[#d9ff00] transition-all transform hover:scale-110"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
           </div>
+
+          {/* 2. LINKS & HQ */}
           <div className="grid grid-cols-2 gap-10">
-            <div className="space-y-4">
-              <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">LINKS</p>
-              <ul className="space-y-3 text-zinc-500 font-bold uppercase text-[9px] tracking-widest">
-                <li className="hover:text-[#d9ff00] cursor-pointer">Services</li>
-                <li className="hover:text-[#d9ff00] cursor-pointer"><a href="#founders">Founders</a></li>
-                <li className="hover:text-[#d9ff00] cursor-pointer">Success Cases</li>
+            {/* LINKS SECTION (Updated Routes) */}
+            <div className="space-y-6">
+              <p className="text-white font-black text-[10px] uppercase tracking-widest italic border-b border-[#d9ff00]/20 pb-2">LINKS</p>
+              <ul className="space-y-4 text-zinc-500 font-bold uppercase text-[9px] tracking-widest">
+                <li className="hover:text-[#d9ff00] transition-colors">
+                  <Link href="/services" className="flex items-center gap-2">
+                    <Layers size={12} className="text-[#d9ff00]/50" /> Services
+                  </Link>
+                </li>
+                <li className="hover:text-[#d9ff00] transition-colors">
+                  <Link href="/work" className="flex items-center gap-2">
+                    <Activity size={12} className="text-[#d9ff00]/50" /> How We Work
+                  </Link>
+                </li>
+                <li className="hover:text-[#d9ff00] transition-colors">
+                  <Link href="/about" className="flex items-center gap-2">
+                    <Target size={12} className="text-[#d9ff00]/50" /> Success Cases
+                  </Link>
+                </li>
               </ul>
             </div>
-            <div className="space-y-4">
-              <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
-              <div className="space-y-3 text-zinc-500 text-[9px] font-bold uppercase">
-                <p className="flex gap-3"><MapPin size={14} className="text-[#d9ff00]" /> Gurugram, HR</p>
-                <p className="flex gap-3 truncate"><Mail size={14} className="text-[#d9ff00]" /> enquiry@scalecraftstudio.in</p>
+
+            {/* HQ SECTION (Icons Fixed) */}
+            <div className="space-y-6">
+              <p className="text-white font-black text-[10px] uppercase tracking-widest italic border-b border-[#d9ff00]/20 pb-2">HQ</p>
+              <div className="space-y-4 text-zinc-500 text-[9px] font-bold uppercase tracking-widest leading-loose">
+                <p className="flex gap-3 items-center">
+                  <MapPin size={14} className="text-[#d9ff00] shrink-0" /> 
+                  Gurgaon, HR
+                </p>
+                <p className="flex gap-3 truncate items-center">
+                  {/* Mail Icon for Email Address */}
+                  <Mail size={14} className="text-[#d9ff00] shrink-0" /> 
+                  scalecraftstudio7
+                </p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center md:items-end space-y-8">
-            <h4 className="text-3xl md:text-4xl font-black uppercase italic text-white text-center md:text-right">READY TO <br /> <span className="text-zinc-800 underline decoration-[#d9ff00]/30">SCALE FAST?</span></h4>
+
+          {/* 3. READY TO SCALE SECTION */}
+          <div className="flex flex-col items-center md:items-end justify-center text-center md:text-right space-y-8">
+            <h4 className="text-3xl md:text-4xl font-black uppercase italic leading-none tracking-tighter text-white">
+              READY TO <br /> 
+              <span className="text-zinc-800 underline decoration-[#d9ff00]/30 italic">SCALE FAST?</span>
+            </h4>
+            
             <Link href="/contact">
-              <button className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:bg-[#d9ff00] transition-all duration-700 shadow-2xl">
-                 <span className="text-white group-hover:text-black font-black uppercase text-[9px] z-10 text-center">BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" /></span>
+              <button className="group relative w-36 h-36 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:bg-[#d9ff00] transition-all duration-700 shadow-2xl overflow-hidden">
+                 <div className="absolute inset-0 bg-white/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+                 <span className="text-white group-hover:text-black font-black uppercase text-[9px] tracking-[0.3em] z-10 text-center leading-tight">
+                    BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" size={12} />
+                 </span>
               </button>
             </Link>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraftStudio | Gurugram | All Rights Reserved</p>
+
+        {/* BOTTOM COPYRIGHT */}
+        <div className="mt-20 pt-8 border-t border-white/5 text-center md:text-left">
+          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">
+            © 2026 ScaleCraft Studio | Gurugram | All Rights Reserved.
+          </p>
         </div>
       </footer>
     </div>
