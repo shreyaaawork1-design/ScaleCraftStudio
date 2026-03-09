@@ -432,7 +432,7 @@ export default function ScaleCraftRefined() {
               <MapPin className="text-[#d9ff00] mb-6" size={24} />
               <h4 className="text-xl font-black uppercase italic text-white mb-3">Local Logic</h4>
               <p className="text-zinc-500 text-xs font-medium italic leading-loose">
-                  Deep intelligence in the <span className="text-[#d9ff00]">NCR region</span>. Craft localized messages that resonate with high-intent audiences.
+                  Deep intelligence in the <span className="text-[#d9ff00]">Indian Market</span>. Craft localized messages that resonate with high-intent audiences.
               </p>
             </motion.div>
 
