@@ -59,7 +59,7 @@ const HeroSlideshow = ({ children }) => {
     <div ref={ref} className="relative w-full rounded-[30px] md:rounded-[60px] overflow-hidden group">
       {/* --- BACKGROUND SLIDESHOW LAYER --- */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 1.1 }}
@@ -68,13 +68,13 @@ const HeroSlideshow = ({ children }) => {
             transition={{ duration: 2, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
           >
-            <img 
-              src={images[index]} 
-              className="w-full h-full object-cover grayscale brightness-75" // Brightness increased to 75
-              alt="Background Growth" 
-                priority="true"
-
-            />
+           <img 
+  src={images[index]} 
+  className="w-full h-full object-cover grayscale brightness-75"
+  alt="Background Growth" 
+  loading="eager" // Browser ko batata hai ki ise turant load karein
+  fetchpriority="high" // Sabse zyada priority deta hai
+/>
           </motion.div>
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
@@ -340,8 +340,7 @@ export default function ScaleCraftRefined() {
           </span>
 
           <HeroSlideshow>
-            <h1 className="flex flex-col items-start gap-0 uppercase">
-                <CalibratedWord type="highlight">SCALE</CalibratedWord>
+<h1 className="flex flex-col items-start gap-0 uppercase min-h-[300px] md:min-h-[500px]">                <CalibratedWord type="highlight">SCALE</CalibratedWord>
                 <CalibratedWord type="standard">YOUR REACH.</CalibratedWord>
                 <CalibratedWord type="highlight">CRAFT</CalibratedWord>
                 <CalibratedWord type="standard">YOUR LEGACY.</CalibratedWord>
