@@ -214,8 +214,7 @@ export default function AboutPage() {
       {/* --- VISION 2026 --- */}
       <section className="py-16 md:py-24 bg-zinc-950/50 px-6 md:px-24 text-center">
          <div className="max-w-5xl mx-auto space-y-8 md:space-y-12">
-            <Network size={60} md:size={80} className="text-[#d9ff00]/20 mx-auto" />
-            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">THE <span className="text-[#d9ff00]">VISION</span> FOR 2026.</h2>
+<Network size={80} className="text-[#d9ff00]/20 mx-auto" />            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">THE <span className="text-[#d9ff00]">VISION</span> FOR 2026.</h2>
             <div className="text-zinc-400 text-sm md:text-xl font-medium italic space-y-6 md:space-y-10 max-w-4xl mx-auto leading-relaxed">
                <p>We are engineering <span className="text-[#d9ff00]">Business Operating Systems</span>, integrating AI creative intelligence with clinical data auditing.</p>
                <p>Expanding our footprint from NCR to the global landscape, maintaining our core 'Brand DNA First' philosophy.</p>
