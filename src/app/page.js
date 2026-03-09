@@ -228,16 +228,14 @@ const StrategyCard = ({ plan, index }) => (
     <div className="absolute top-0 right-0 w-64 h-64 bg-[#d9ff00]/5 blur-[100px] pointer-events-none" />
     
     <div>
-      <span className="text-[#d9ff00] font-black text-[9px] tracking-[0.4em] uppercase block mb-4 italic opacity-30">SYSTEM_MODEL_0{index + 1}</span>
+      <span className="text-[#d9ff00] font-black text-[9px] tracking-[0.4em] uppercase block mb-4 italic opacity-30"></span>
       <h4 className="text-2xl md:text-5xl font-black uppercase italic text-white mb-6 tracking-tighter leading-none">{plan.title}</h4>
       <p className="text-zinc-500 text-xs md:text-base font-medium leading-relaxed italic max-w-2xl border-l-2 border-[#d9ff00]/20 pl-6 md:pl-8 group-hover:text-zinc-300 transition-colors">
         {plan.desc}
       </p>
     </div>
 
-    <div className="text-zinc-800 font-mono text-[9px] uppercase tracking-widest italic font-bold mt-6">
-        Engineering_Status: Ready_to_Deploy
-    </div>
+  
   </motion.div>
 );
 
@@ -628,7 +626,7 @@ export default function ScaleCraftRefined() {
               <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
               <div className="space-y-3 text-zinc-500 text-[9px] font-bold uppercase">
                 <p className="flex gap-3"><MapPin size={14} className="text-[#d9ff00]" /> Gurugram, HR</p>
-                <p className="flex gap-3 truncate"><Mail size={14} className="text-[#d9ff00]" /> scalecraftstudio7</p>
+                <p className="flex gap-3 truncate"><Mail size={14} className="text-[#d9ff00]" /> enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>
@@ -642,7 +640,7 @@ export default function ScaleCraftRefined() {
           </div>
         </div>
         <div className="mt-16 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurugram</p>
+          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraftStudio | Gurugram | All Rights Reserved</p>
         </div>
       </footer>
     </div>
