@@ -52,30 +52,33 @@ const HeroSlideshow = ({ children }) => {
 
   return (
     <div ref={ref} className="relative w-full rounded-[30px] md:rounded-[60px] overflow-hidden group">
+      {/* --- BACKGROUND SLIDESHOW LAYER --- */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.18, scale: 1 }} 
+            animate={{ opacity: 0.28, scale: 1 }} // Visibility increased to 0.28
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
           >
             <img 
               src={images[index]} 
-              className="w-full h-full object-cover grayscale brightness-50" 
+              className="w-full h-full object-cover grayscale brightness-75" // Brightness increased to 75
               alt="Background Growth" 
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       </div>
 
+      {/* --- TEXT CONTENT OVERLAY --- */}
       <div className="relative z-10 py-10 px-6 md:py-20 md:px-20">
         {children}
       </div>
 
+      {/* Progress Bars */}
       <div className="absolute bottom-6 right-6 md:bottom-10 md:right-16 z-20 flex gap-2">
         {images.map((_, i) => (
           <div 
@@ -91,7 +94,7 @@ const HeroSlideshow = ({ children }) => {
 const pipelineSteps = [
   { 
     title: "MARKET DISCOVERY", 
-    desc: "We dismantle industry architecture to find hidden growth gaps Using 50+ data points from Gurgaon’s landscape, we audit the market to define a predictable path for your brand. We ensure every rupee is aimed at a mathematically proven audience for maximum scaling potential.", 
+    desc: "We dismantle industry architecture to find hidden growth gaps Using 50+ data points from Gurugram’s landscape, we audit the market to define a predictable path for your brand. We ensure every rupee is aimed at a mathematically proven audience for maximum scaling potential.", 
     icon: <Search size={22} />,
     technical: "PROTOCOL: DATA_MINING_v4.2"
   },
@@ -610,7 +613,7 @@ export default function ScaleCraftRefined() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
           <div className="space-y-6 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurgaon. We engineer measurable growth for ambitious brands.</p>
+            <p className="text-zinc-500 font-medium italic text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.</p>
           </div>
           <div className="grid grid-cols-2 gap-10">
             <div className="space-y-4">
@@ -624,7 +627,7 @@ export default function ScaleCraftRefined() {
             <div className="space-y-4">
               <p className="text-white font-black text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
               <div className="space-y-3 text-zinc-500 text-[9px] font-bold uppercase">
-                <p className="flex gap-3"><MapPin size={14} className="text-[#d9ff00]" /> Gurgaon, HR</p>
+                <p className="flex gap-3"><MapPin size={14} className="text-[#d9ff00]" /> Gurugram, HR</p>
                 <p className="flex gap-3 truncate"><Mail size={14} className="text-[#d9ff00]" /> scalecraftstudio7</p>
               </div>
             </div>
@@ -639,7 +642,7 @@ export default function ScaleCraftRefined() {
           </div>
         </div>
         <div className="mt-16 pt-8 border-t border-white/5 text-center md:text-left">
-          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurgaon</p>
+          <p className="text-zinc-700 text-[8px] tracking-[1em] font-black uppercase">© 2026 ScaleCraft Studio | Gurugram</p>
         </div>
       </footer>
     </div>
