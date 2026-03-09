@@ -16,8 +16,7 @@ const navData = [
   { label: 'About Us', link: '/about' }
 ];
 
-// --- SHARD CURSOR (Smart Inversion Fix) ---
-// --- SHARD CURSOR (Performance Boosted for Work Page) ---
+// --- SHARD CURSOR (Performance Boosted & Fast Refresh) ---
 const ShardCursor = () => {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -45,7 +44,7 @@ const ShardCursor = () => {
   );
 };
 
-// --- ELITE PROCESS VISUALS ---
+// --- ELITE PROCESS VISUALS (Syntax Fixed) ---
 const VisualAnimation = ({ id }) => {
   switch(id) {
     case "01": 
@@ -56,7 +55,7 @@ const VisualAnimation = ({ id }) => {
           <div className="relative z-10 flex gap-2 md:gap-4">
              {[1,2,3].map(i => <motion.div key={i} animate={{ y: [0, -20, 0] }} transition={{ duration: 2, delay: i*0.3, repeat: Infinity }} className="w-2 h-2 bg-[#d9ff00] rounded-full shadow-[0_0_10px_#d9ff00]" />)}
           </div>
-          <Search size={40} className="absolute text-[#d9ff00]/20 md:size-[60px]" />
+          <Search size={60} className="absolute text-[#d9ff00]/20" />
         </div>
       );
     case "02": 
@@ -98,7 +97,7 @@ const VisualAnimation = ({ id }) => {
              />
           </svg>
           <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-10 right-10">
-             <Rocket size={30} className="text-[#d9ff00]/60 rotate-45 md:size-[50px]" />
+             <Rocket size={50} className="text-[#d9ff00]/60 rotate-45" />
           </motion.div>
         </div>
       );
@@ -131,14 +130,14 @@ export default function WorkPage() {
     <main className="min-h-screen bg-black text-white selection:bg-[#d9ff00] selection:text-black overflow-x-hidden">
       <ShardCursor />
 
-      {/* --- HEADER --- */}
+      {/* --- REFINED HEADER --- */}
       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] z-[1000] px-3 md:px-10 py-2 md:py-4 flex flex-col rounded-[20px] md:rounded-[32px] bg-white/[0.05] backdrop-blur-[40px] border border-white/20 shadow-2xl transition-all duration-700">
-  <div className="flex justify-between items-center w-full">
-    <Link href="/" className="shrink-0">
-      <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white transition-all hover:drop-shadow-[0_0_15px_rgba(217,255,0,0.9)]">
-        SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
-      </div>
-    </Link>
+        <div className="flex justify-between items-center w-full">
+          <Link href="/" className="shrink-0">
+            <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white transition-all hover:drop-shadow-[0_0_15px_rgba(217,255,0,0.9)]">
+              SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
+            </div>
+          </Link>
 
           <div className="hidden lg:flex gap-4">
             {navData.map((item, i) => (
@@ -187,7 +186,7 @@ export default function WorkPage() {
             ENGINEERED <br /> <span className="text-zinc-800">EXECUTION.</span>
           </h1>
           <p className="text-zinc-500 text-base md:text-xl font-medium leading-relaxed italic border-l-4 border-[#d9ff00]/20 pl-6 md:pl-10 max-w-4xl">
-            Success is not a product of luck; it is a result of clinical engineering. We dismantle the chaos of traditional marketing to install a <span className="text-[#d9ff00]">high-speed, data-driven revenue engine</span> tailored for the ambitious digital landscape of Gurugram and beyond.
+            Success is not a product of luck; it is a result of clinical engineering. We dismantle the chaos of traditional marketing to install a <span className="text-[#d9ff00]">high-speed, data-driven revenue engine</span> tailored for the ambitious digital landscape of Gurugram.
           </p>
         </div>
       </section>
@@ -201,23 +200,19 @@ export default function WorkPage() {
                <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-tight">Growth <br/> <span className="text-[#d9ff00]">Strategies.</span></h2>
             </div>
             <div className="text-zinc-400 text-sm md:text-lg font-medium italic space-y-6 md:space-y-8 leading-relaxed">
-              <p>Our growth strategies are founded on the principle of <span className="text-[#d9ff00]">Psychological Performance Architecture</span>. We target human behavior, not just demographics. By mapping the digital footprint of your potential customer in Gurugram, we identify the exact "Conversion Gaps". </p>
-              <p>We utilize <span className="text-[#d9ff00]">High-Intensity Data Modeling</span> to predict market shifts before they happen. This includes setting up technical funnel hierarchies that guide a cold prospect from curiosity to a confirmed transaction in record time.</p>
-              <p>Whether it is scaling your <span className="text-[#d9ff00]">ROAS (Return on Ad Spend)</span> through advanced A/B testing or building a long-term asset through Search Authority, every move we make is backed by mathematical logic.</p>
+              <p>Our growth strategies are founded on the principle of <span className="text-[#d9ff00]">Psychological Performance Architecture</span>. We target human behavior, not just demographics.</p>
+              <p>We utilize <span className="text-[#d9ff00]">High-Intensity Data Modeling</span> to predict market shifts before they happen, building technical funnel hierarchies that guide prospects.</p>
             </div>
           </motion.div>
           
           <div className="sticky top-32 bg-zinc-950 border border-white/5 rounded-[40px] md:rounded-[60px] h-[350px] md:h-[450px] flex items-center justify-center overflow-hidden shadow-2xl group">
              <motion.div animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="absolute w-[150%] h-[150%] border-[1px] border-dashed border-[#d9ff00]/10 rounded-full" />
              <div className="relative z-10 flex flex-col items-center">
-<Radar size={80} className="text-[#d9ff00] drop-shadow-[0_0_20px_rgba(217,255,0,0.5)]" />                <AnimatePresence mode='wait'>
-                 <motion.div 
-  animate={{ opacity: [0.05, 0.1, 0.05] }} 
-  transition={{ duration: 4, repeat: Infinity }} 
-  className="absolute inset-0 flex items-center justify-center"
->
-  <Fingerprint size={300} className="text-[#d9ff00]" />
-</motion.div>
+                <Radar size={80} className="text-[#d9ff00] drop-shadow-[0_0_20px_rgba(217,255,0,0.5)]" />
+                <AnimatePresence mode='wait'>
+                  <motion.div animate={{ opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 4, repeat: Infinity }} className="absolute inset-0 flex items-center justify-center">
+                    <Fingerprint size={300} className="text-[#d9ff00]" />
+                  </motion.div>
                 </AnimatePresence>
              </div>
              <Network className="absolute top-12 left-12 text-[#d9ff00]/10" size={150} />
@@ -225,7 +220,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* --- SECTION 2: THE 5-STEP PIPELINE --- */}
+      {/* --- PIPELINE --- */}
       <section className="py-24 md:py-48 bg-zinc-950/30 px-6 md:px-24">
         <div className="text-center mb-16 md:mb-32">
           <h3 className="text-[#d9ff00] font-black uppercase text-[10px] tracking-[0.4em] italic mb-4">The Clinical Process</h3>
@@ -233,29 +228,28 @@ export default function WorkPage() {
         </div>
         <div className="space-y-32 md:space-y-48">
           {[
-            { id: "01", title: "Market Discovery", desc: "Before we write code, we dismantle your industry architecture. We analyze over <span class='text-[#d9ff00]'>50 data points</span>—from competitor bounce rates to high-intent keywords. This phase ensures we aren't just joining the market, but preparing to own it." },
-            { id: "02", title: "Logic & Design", desc: "This is where performance meets art. We design your visual identity using <span class='text-[#d9ff00]'>Conversion-First psychology</span>. Every color and headline is engineered to reduce friction and build multi-million dollar authority from Day 1." },
-            { id: "03", title: "Execution Lab", desc: "Production begins. We create <span class='text-[#d9ff00]'>high-retention cinematic content</span> and technically-superior landing pages that stop the scroll in under 1.5 seconds. We connect your ads and CRM into one seamless machine." },
-            { id: "04", title: "Aggressive Scaling", desc: "We launch multi-channel campaigns. We don't just buy traffic; we buy <span class='text-[#d9ff00]'>high-intent customers</span>. Using A/B models, we scale only on winning creatives that deliver actual revenue." },
-            { id: "05", title: "Data Auditing", desc: "Optimization is infinite. We conduct weekly audits to double-down on what works. Using <span class='text-[#d9ff00]'>CAPI and GA4 integration</span>, we ensure your ROI is clearly measurable and compounding." }
+            { id: "01", title: "Market Discovery", desc: "Before we write code, we dismantle your industry architecture analyzing <span class='text-[#d9ff00]'>50 data points</span>." },
+            { id: "02", title: "Logic & Design", desc: "Performance meets art. We design your visual identity using <span class='text-[#d9ff00]'>Conversion-First psychology</span>." },
+            { id: "03", title: "Execution Lab", desc: "Production begins. We create <span class='text-[#d9ff00]'>high-retention cinematic content</span> that stops the scroll." },
+            { id: "04", title: "Aggressive Scaling", desc: "Launching multi-channel campaigns. We buy <span class='text-[#d9ff00]'>high-intent customers</span>." },
+            { id: "05", title: "Data Auditing", desc: "Infinite optimization. Using <span class='text-[#d9ff00]'>CAPI and GA4 integration</span>, we ensure compounding ROI." }
           ].map((step, i) => (
             <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className={`bg-zinc-900/40 border border-white/5 rounded-[40px] md:rounded-[60px] h-[300px] md:h-[450px] flex items-center justify-center relative overflow-hidden group ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
-                  <VisualAnimation id={step.id} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-               </motion.div>
-
-               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className={`space-y-4 md:space-y-8 ${i % 2 !== 0 ? 'md:order-1' : ''}`}>
-                  <h5 className="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-[#d9ff00]">Step {step.id}</h5>
-                  <h6 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">{step.title}.</h6>
-                  <p className="text-zinc-500 text-sm md:text-lg font-medium italic leading-relaxed" dangerouslySetInnerHTML={{ __html: step.desc }} />
-               </motion.div>
+                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className={`bg-zinc-900/40 border border-white/5 rounded-[40px] md:rounded-[60px] h-[300px] md:h-[450px] flex items-center justify-center relative overflow-hidden group ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
+                   <VisualAnimation id={step.id} />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className={`space-y-4 md:space-y-8 ${i % 2 !== 0 ? 'md:order-1' : ''}`}>
+                   <h5 className="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-[#d9ff00]">Step {step.id}</h5>
+                   <h6 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">{step.title}.</h6>
+                   <p className="text-zinc-500 text-sm md:text-lg font-medium italic leading-relaxed" dangerouslySetInnerHTML={{ __html: step.desc }} />
+                </motion.div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* --- SECTION 3: THE TECHNICAL ARSENAL --- */}
+      {/* --- THE TECHNICAL ARSENAL --- */}
       <section className="py-24 md:py-48 px-6 md:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
           <div className="space-y-8 md:space-y-12">
@@ -263,9 +257,8 @@ export default function WorkPage() {
                <div className="w-10 h-10 md:w-12 md:h-12 bg-zinc-900 rounded-xl flex items-center justify-center border border-white/5 shrink-0"><Cpu className="text-[#d9ff00]" size={20} /></div>
                <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">The Technical <br/> <span className="text-[#d9ff00]">Arsenal.</span></h2>
             </div>
-            <div className="text-zinc-400 text-sm md:text-lg font-medium italic space-y-6 md:space-y-8 leading-relaxed">
-              <p>A high-performance brand requires a high-performance stack. We use <span className="text-[#d9ff00]">Next.js and Vercel</span> for speed, and <span className="text-[#d9ff00]">Firebase/GA4</span> for deep tracking.</p>
-              <p>Our lab leverages <span className="text-[#d9ff00]">Search Authority Engines</span> to build organic pull, ensuring you become a permanent asset in the digital ecosystem.</p>
+            <div className="text-zinc-400 text-sm md:text-lg font-medium italic leading-relaxed">
+              <p>A high-performance brand requires a high-performance stack. We use <span className="text-[#d9ff00]">Next.js and Vercel</span> for speed.</p>
             </div>
           </div>
           <div className="bg-[#d9ff00] rounded-[40px] md:rounded-[60px] h-auto md:h-[500px] p-8 md:p-16 text-black flex flex-col justify-between shadow-2xl">
@@ -276,7 +269,7 @@ export default function WorkPage() {
              <div className="grid grid-cols-2 gap-4 md:gap-8">
                 {[{ n: "Meta Ads", i: <Target size={20}/> }, { n: "GA4 Auditing", i: <PieChart size={20}/> }, { n: "Vercel", i: <Cpu size={20}/> }, { n: "SEO Auth", i: <Globe size={20}/> }].map((t, idx) => (
                   <div key={idx} className="space-y-2 group">
-                     <div className="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center text-[#d9ff00] group-hover:scale-110 transition-transform">{t.i}</div>
+                     <div className="w-8 h-8 md:w-10 md:h-10 bg-black rounded-xl flex items-center justify-center text-[#d9ff00]">{t.i}</div>
                      <p className="text-[7px] md:text-[9px] font-black uppercase tracking-widest">{t.n}</p>
                   </div>
                 ))}
@@ -285,40 +278,31 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* --- SECTION 4: WORK CULTURE --- */}
+      {/* --- CULTURE --- */}
       <section className="py-24 md:py-64 bg-zinc-950 px-6 md:px-24 text-center relative overflow-hidden">
-        <motion.div 
-  animate={{ opacity: [0.05, 0.1, 0.05] }} 
-  transition={{ duration: 4, repeat: Infinity }} 
-  className="absolute inset-0 flex items-center justify-center"
->
-  <Fingerprint size={300} className="text-[#d9ff00] md:w-[600px] md:h-[600px]" />
-</motion.div>
-         
-         <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} className="max-w-5xl mx-auto space-y-12 md:space-y-16 relative z-10">
-            <h2 className="text-2xl md:text-7xl font-black uppercase italic tracking-tighter text-white leading-tight md:leading-[0.9]">
-              "WE UNDERSTAND YOUR <span className="text-[#d9ff00]">BRAND DNA</span> FIRST, THEN DISCOVER THE MARKET TO FIND YOUR <span className="text-[#d9ff00]">BEST FIT.</span>"
-            </h2>
-            <div className="text-zinc-500 text-sm md:text-xl font-medium leading-relaxed italic space-y-8 md:space-y-12">
-              <p>Our work culture is rooted in <span className="text-[#d9ff00]">Obsessive Understanding</span>. We don't believe in generic templates or one-size-fits-all marketing. Every brand is a living entity with a unique identity, and our job is to translate that identity into a market-leading position. At ScaleCraft Studio, we immerse ourselves in your vision, your challenges, and your history. </p>
-              <p>Only once we have fully decoded your <span className="text-[#d9ff00]">Brand DNA</span> do we execute our high-intensity market discovery protocols. We analyze consumer psychology in Gurugram, and the global digital space to find the exact intersection where your value proposition meets high-intent demand.</p>
-              <p>We bridge the gap between technical complexity and business growth. Our lab operates with the precision of a surgical unit, ensuring that every line of code, every pixel of creative asset, and every rupee of ad spend is optimized to <span className="text-[#d9ff00]">maximize your revenue engine</span>. We are not just your agency; we are your performance partners.</p>
-            </div>
-         </motion.div>
+        <motion.div animate={{ opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 4, repeat: Infinity }} className="absolute inset-0 flex items-center justify-center">
+          <Fingerprint className="text-[#d9ff00] w-[300px] h-[300px] md:w-[600px] md:h-[600px]" />
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} className="max-w-5xl mx-auto space-y-12 md:space-y-16 relative z-10">
+          <h2 className="text-2xl md:text-7xl font-black uppercase italic tracking-tighter text-white leading-tight">
+            "WE UNDERSTAND YOUR <span className="text-[#d9ff00]">BRAND DNA</span> FIRST."
+          </h2>
+          <p className="text-zinc-500 text-sm md:text-xl font-medium italic leading-relaxed">
+            We bridge the gap between technical complexity and business growth. Our lab operates with surgical precision, ensuring every rupee of spend is optimized.
+          </p>
+        </motion.div>
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="py-24 bg-black border-t border-white/5 px-6 md:px-24">
+      <footer className="py-16 md:py-24 bg-black border-t border-white/5 px-6 md:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 items-start">
           <div className="space-y-8 text-white">
             <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic">SCALE<span className="text-[#d9ff00]">CRAFT.</span></div>
-            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram. We engineer measurable growth for ambitious brands.</p>
+            <p className="text-zinc-500 font-medium italic max-w-xs text-xs md:text-sm leading-relaxed">Performance-driven branding studio based in Gurugram.</p>
             <div className="flex gap-6 items-center">
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Instagram size={20} /></a>
               <a href="#" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Twitter size={20} /></a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in&su=Project%20Inquiry" target="_blank" rel="noopener noreferrer">
-  <Mail size={20} />
-</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=enquiry@scalecraftstudio.in" target="_blank" className="text-zinc-500 hover:text-[#d9ff00] transition-all"><Mail size={20} /></a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-10">
@@ -332,17 +316,17 @@ export default function WorkPage() {
             </div>
             <div className="space-y-6">
               <p className="text-white font-black text-[9px] md:text-[10px] uppercase border-b border-[#d9ff00]/20 pb-2">HQ</p>
-              <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest leading-loose">
+              <div className="space-y-4 text-zinc-500 text-[8px] md:text-[9px] font-bold uppercase tracking-widest">
                 <p className="flex gap-3 items-center"><MapPin size={14} className="text-[#d9ff00] shrink-0" /> Gurugram, HR</p>
-                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" />enquiry@scalecraftstudio.in</p>
+                <p className="flex gap-3 truncate items-center"><Mail size={14} className="text-[#d9ff00] shrink-0" /> enquiry@scalecraftstudio.in</p>
               </div>
             </div>
           </div>
           <div className="flex flex-col items-center md:items-end justify-center text-center md:text-right space-y-8">
             <h4 className="text-3xl md:text-4xl font-black uppercase italic text-white leading-none">READY TO <br /> <span className="text-zinc-800 underline decoration-[#d9ff00]/30 italic">SCALE FAST?</span></h4>
             <Link href="/contact">
-              <button className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:bg-[#d9ff00] transition-all duration-700 shadow-2xl overflow-hidden">
-                 <span className="text-white group-hover:text-black font-black uppercase text-[9px] z-10 text-center leading-tight font-black">BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" /></span>
+              <button className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center bg-transparent hover:bg-[#d9ff00] transition-all duration-700 shadow-2xl">
+                 <span className="text-white group-hover:text-black font-black uppercase text-[9px] z-10 text-center leading-tight">BOOK A <br /> CALL <ArrowUpRight className="inline ml-1" size={12} /></span>
               </button>
             </Link>
           </div>

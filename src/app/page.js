@@ -37,7 +37,7 @@ const HeroSlideshow = ({ children }) => {
   const [index, setIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const ref = useRef(null);
-  priority="true"
+ 
 
   const images = [
     "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
@@ -72,6 +72,8 @@ const HeroSlideshow = ({ children }) => {
               src={images[index]} 
               className="w-full h-full object-cover grayscale brightness-75" // Brightness increased to 75
               alt="Background Growth" 
+                priority="true"
+
             />
           </motion.div>
         </AnimatePresence>
@@ -196,7 +198,6 @@ const ShardCursor = () => {
   const mouseY = useMotionValue(-100);
   const smoothX = useSpring(mouseX, { damping: 30, stiffness: 800, mass: 0.5 });
   const smoothY = useSpring(mouseY, { damping: 30, stiffness: 800, mass: 0.5 });
-  const ShardCursor = dynamic(() => import('./components/ShardCursor'), { ssr: false });
   
   useEffect(() => {
     const handleMouseMove = (e) => {
