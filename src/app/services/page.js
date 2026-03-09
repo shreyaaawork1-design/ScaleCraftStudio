@@ -156,8 +156,10 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           <div className="order-2 md:order-1 sticky top-32 md:top-48 bg-zinc-950 border border-white/5 rounded-[40px] md:rounded-[60px] aspect-square flex flex-col items-center justify-center p-12 md:p-20">
              <motion.div animate={{rotate:360}} transition={{duration:15, repeat:Infinity, ease:"linear"}} className="relative w-full h-full border-2 border-dashed border-[#d9ff00]/10 rounded-full flex items-center justify-center">
-                <Target size={60} md:size={100} className="text-[#d9ff00] opacity-20" />
-                <div className="absolute top-0 w-4 h-4 bg-[#d9ff00] rounded-full shadow-[0_0_20px_#d9ff00]" />
+{/* Sahi Tarika: Wrapper div ke saath responsive size */}
+<div className="w-[60px] h-[60px] md:w-[100px] md:h-[100px]">
+    <Target className="w-full h-full text-[#d9ff00] opacity-20" />
+</div>                <div className="absolute top-0 w-4 h-4 bg-[#d9ff00] rounded-full shadow-[0_0_20px_#d9ff00]" />
              </motion.div>
              <h4 className="absolute font-black uppercase italic text-zinc-500 tracking-[0.5em] text-[8px] md:text-[10px]">Scanning Leads</h4>
           </div>
