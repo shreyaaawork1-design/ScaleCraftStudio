@@ -264,58 +264,30 @@ export default function ScaleCraftRefined() {
       <ShardCursor />
 
       {/* --- BRAND HEADER --- */}
-      <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] z-[500] px-4 md:px-10 py-3 md:py-5 flex flex-col rounded-[24px] md:rounded-[32px] overflow-visible transition-all duration-700 bg-white/[0.05] backdrop-blur-[50px] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-        <div className="flex justify-between items-center w-full">
-          <div 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-3 group cursor-pointer"
-          >
-            <div className="text-sm md:text-xl font-black tracking-tighter uppercase italic text-white transition-all duration-500 group-hover:drop-shadow-[0_0_15px_rgba(217,255,0,0.9)]">
-              SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
-            </div>
-          </div>
+     <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[94%] md:w-[90%] z-[1000] px-3 md:px-10 py-2 md:py-4 flex flex-col rounded-[20px] md:rounded-[32px] bg-white/[0.05] backdrop-blur-[40px] border border-white/20">
+  <div className="flex justify-between items-center w-full">
+    
+    {/* LOGO: Smaller size */}
+    <div className="text-[12px] md:text-xl font-black tracking-tighter uppercase italic text-white shrink-0">
+      SCALECRAFT<span className="text-[#d9ff00]">STUDIO.</span>
+    </div>
 
-          <div className="hidden lg:flex gap-4">
-            {navData.map((item, i) => (
-              <Link key={i} href={item.link}>
-                <button className="px-6 py-2 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 hover:text-[#d9ff00] transition-all duration-300">
-                  {item.label} 
-                </button>
-              </Link>
-            ))}
-          </div>
+    {/* RIGHT ACTIONS: Grouping Button and Menu */}
+    <div className="flex items-center gap-2 md:gap-4">
+      <Link href="/contact">
+        <button className="bg-[#d9ff00] text-black px-3 md:px-10 py-2 md:py-3.5 rounded-lg md:rounded-2xl font-[1000] text-[8px] md:text-[11px] uppercase tracking-wider shadow-lg flex items-center gap-1">
+          <Phone size={10} className="hidden sm:block" />
+          START SCALING
+        </button>
+      </Link>
 
-          <div className="flex items-center gap-2">
-            <Link href="/contact" className="relative z-[160]">
-              <button className="bg-[#d9ff00] text-black px-4 md:px-10 py-2.5 md:py-3.5 rounded-xl md:rounded-2xl font-[1000] text-[9px] md:text-[11px] uppercase tracking-[0.2em] shadow-[0_0_25px_rgba(217,255,0,0.4)] hover:shadow-[0_0_45px_rgba(217,255,0,0.8)] hover:scale-105 transition-all flex items-center gap-2 group border-none">
-                <Phone size={12} className="animate-bounce" />
-                START SCALING
-              </button>
-            </Link>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-2">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }} 
-              animate={{ height: 'auto', opacity: 1 }} 
-              exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden flex flex-col gap-4 mt-4 pb-4"
-            >
-              {navData.map((item, i) => (
-                <Link key={i} href={item.link} onClick={() => setIsMenuOpen(false)}>
-                  <span className="text-zinc-400 font-black uppercase tracking-widest text-[10px] py-2 block border-b border-white/5">{item.label}</span>
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+      {/* THREE BAR MENU */}
+      <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-1 hover:bg-white/10 rounded-md transition-colors">
+        {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+    </div>
+  </div>
+</nav>
 
       {/* --- HERO SECTION --- */}
       <section className="min-h-screen flex flex-col justify-center px-6 md:px-24 pt-32 md:pt-40 relative overflow-hidden">
